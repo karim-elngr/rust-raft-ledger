@@ -1,0 +1,32 @@
+    Blocking waiting for file lock on build directory
+    Finished `release` profile [optimized] target(s) in 24.63s
+     Running tests/network.rs (target/release/deps/network-82bf147c3dcebacb)
+
+running 1 test
+rolling baseline=/Users/karimelnaggar/rust-raft-ledger/target/rc-before-build/release/ledger-node candidate=/Users/karimelnaggar/rust-raft-ledger/target/release/ledger-node
+cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Initialized voter 2.
+Voter 1 listening on 127.0.0.1:57946.
+Ledger API listening on 127.0.0.1:57949.
+Voter 2 listening on 127.0.0.1:57947.
+Ledger API listening on 127.0.0.1:57950.
+Initialized voter 3.
+Voter 3 listening on 127.0.0.1:57948.
+Ledger API listening on 127.0.0.1:57951.
+rolling baseline_leader=1 selected_follower=2 original_request=11 entry=1 rejected_request=12
+Voter 2 listening on 127.0.0.1:57947.
+Ledger API listening on 127.0.0.1:57950.
+rolling candidate_node=2 applied=6 sealed=Some(6) through=6
+rolling candidate_node=2 applied=9 sealed=Some(9) through=9
+rolling mixed_majority=[2, 3] request=14 entry=3 retry=identical
+Voter 1 listening on 127.0.0.1:57946.
+Ledger API listening on 127.0.0.1:57949.
+Local checkpoint index=9 term=2.
+Voter 2 listening on 127.0.0.1:57947.
+Ledger API listening on 127.0.0.1:57950.
+rolling rollback_majority=[2, 3] reopened_node=2 original_decisions_verified=6 final_entry=5 wallet_balance=10
+test cli::rolling::protected_rolling_upgrade_and_rollback ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 24 filtered out; finished in 4.67s
+

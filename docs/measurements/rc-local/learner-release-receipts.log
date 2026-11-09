@@ -1,0 +1,52 @@
+    Blocking waiting for file lock on build directory
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+   Compiling ledger-export-adapters v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-export-adapters)
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `release` profile [optimized] target(s) in 1m 41s
+     Running tests/network.rs (target/release/deps/network-d9a0d0ba1cb8326e)
+
+running 1 test
+cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Initialized voter 2.
+Initialized voter 3.
+Initialized learner 4.
+Learner 4 listening on 127.0.0.1:62861.
+Learner monitor listening on 127.0.0.1:62866.
+Learner exports ExportStatus { archive_cursor: None, archived_through: None, event_cursor: None, archive_error: None, event_error: None }
+Voter 2 listening on 127.0.0.1:62859.
+Ledger API listening on 127.0.0.1:62863.
+Voter 1 listening on 127.0.0.1:62858.
+Ledger API listening on 127.0.0.1:62862.
+Learner 4 listening on 127.0.0.1:62861.
+Learner monitor listening on 127.0.0.1:62866.
+Learner exports ExportStatus { archive_cursor: Some(0), archived_through: None, event_cursor: Some(Position { index: 0, slot: 65535 }), archive_error: None, event_error: None }
+Learner 4 listening on 127.0.0.1:62861.
+Learner monitor listening on 127.0.0.1:62866.
+Learner exports ExportStatus { archive_cursor: Some(5), archived_through: Some(5), event_cursor: Some(Position { index: 5, slot: 65535 }), archive_error: None, event_error: None }
+Learner 4 listening on 127.0.0.1:62861.
+Learner monitor listening on 127.0.0.1:62866.
+Learner exports ExportStatus { archive_cursor: None, archived_through: None, event_cursor: Some(Position { index: 6, slot: 65535 }), archive_error: None, event_error: None }
+Restored voter 11 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Restored voter 12 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Restored voter 13 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Restored voter 14 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Activation work base_index=0 compared_entries=6
+cluster=43 index=6 term=1 fenced=false sha256=2854db9bd7e265074824f3436ea8389b086ee137ae9e69723b8913f595e8681c
+Learner 14 listening on 127.0.0.1:62968.
+Learner exports ExportStatus { archive_cursor: Some(0), archived_through: None, event_cursor: None, archive_error: None, event_error: Voter Voter 11 listening on 127None }
+13 listening on 127.0.0.1:62967.
+Ledger API listening on 127.0.0.1:62971.
+.0.0.1:62965.
+Ledger API listening on 127.0.0.1:62969.
+Voter 12 listening on 127.0.0.1:62966.
+Ledger API listening on 127.0.0.1:62970.
+learner_restore cut_index=6 independent_receipts=6 matched=4 lost_accepted=1 lost_rejected=1 kafka_only_beyond_cut=2 restored_members=4 first_payment_ms=1937 three_voters_ms=1943 applied_through=8 learner_archived_through=8
+test cli::learner::learner_cli_archives_and_publishes_after_quorum_ack_and_restart ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 25 filtered out; finished in 5.88s
+

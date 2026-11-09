@@ -1,0 +1,85 @@
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+    Finished `release` profile [optimized] target(s) in 0.81s
+     Running unittests examples/reconcile_receipts.rs (target/release/examples/reconcile_receipts-cc7d224430ed7207)
+
+running 2 tests
+test receipts::tests::refuses_incomplete_unknown_and_ambiguous_protobuf_receipts ... ok
+test receipts::tests::verifies_balanced_lines_across_u128_carries ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+    Finished `release` profile [optimized] target(s) in 0.94s
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `release` profile [optimized] target(s) in 14.10s
+     Running tests/network.rs (target/release/deps/network-d9a0d0ba1cb8326e)
+
+running 1 test
+cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Initialized voter 2.
+Initialized voter 3.
+Initialized learner 4.
+Learner 4 listening on 127.0.0.1:51001.
+Learner monitor listening on 127.0.0.1:51006.
+Learner exports ExportStatus { archive_cursor: None, archived_through: None, event_cursor: None, archive_error: None, event_error: None }
+Voter 2 listening on 127.0.0.1:50999.
+Voter 1 listening on 127.0.0.1:50998.
+Ledger API listening on 127.0.0.1:51003.
+Ledger API listening on 127.0.0.1:51002.
+Learner 4 listening on 127.0.0.1:51001.
+Learner monitor listening on 127.0.0.1:51006.
+Learner exports ExportStatus { archive_cursor: Some(0), archived_through: None, event_cursor: Some(Position { index: 0, slot: 65535 }), archive_error: Some("export temporarily unavailable: recovery journal I/O: No such file or directory (os error 2)"), event_error: None }
+Learner 4 listening on 127.0.0.1:51001.
+Learner monitor listening on 127.0.0.1:51006.
+Learner exports ExportStatus { archive_cursor: Some(5), archived_through: None, event_cursor: Some(Position { index: 5, slot: 65535 }), archive_error: None, event_error: None }
+Learner 4 listening on 127.0.0.1:51001.
+Learner monitor listening on 127.0.0.1:51006.
+Learner exports ExportStatus { archive_cursor: None, archived_through: None, event_cursor: Some(Position { index: 6, slot: 65535 }), archive_error: None, event_error: None }
+Restored voter 11 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Restored voter 12 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Restored voter 13 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Restored voter 14 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Activation work base_index=0 compared_entries=6
+cluster=43 index=6 term=1 fenced=false sha256=2854db9bd7e265074824f3436ea8389b086ee137ae9e69723b8913f595e8681c
+Voter 11 listening on 127.0.0.1:51100.
+Ledger API listening on 127.0.0.1:51104.
+Voter 13 listening on 127.0.0.1:51102.
+Ledger API listening on 127.0.0.1:51106.
+Voter 12 listening on 127.0.0.1:51101.
+Ledger API listening on 127.0.0.1:51105.
+Learner 14 listening on 127.0.0.1:51103.
+Learner exports ExportStatus { archive_cursor: Some(0), archived_through: None, event_cursor: None, archive_error: None, event_error: None }
+learner_restore cut_index=6 independent_receipts=6 matched=4 lost_accepted=1 lost_rejected=1 kafka_only_beyond_cut=2 restored_members=4 first_payment_ms=1879 three_voters_ms=1880 applied_through=8 learner_archived_through=8
+reconcile_exit=exit status: 1
+ledger=7 request=104 missing_acceptance
+ledger=7 request=105 missing_rejection
+ledger=7 expected=6 matched=4 missing_acceptances=1 missing_rejections=1 mismatches=0 rpc_errors=0 invalid_evidence=0
+
+reconcile_exit=exit status: 0
+ledger=7 expected=4 matched=4 missing_acceptances=0 missing_rejections=0 mismatches=0 rpc_errors=0 invalid_evidence=0
+
+reconcile_exit=exit status: 1
+ledger=7 request=103 decision_mismatch
+ledger=7 expected=4 matched=3 missing_acceptances=0 missing_rejections=0 mismatches=1 rpc_errors=0 invalid_evidence=0
+
+reconcile_exit=exit status: 1
+ledger=7 request=100 invalid_evidence=No such file or directory (os error 2)
+ledger=7 request=103 invalid_evidence=failed to decode Protobuf message: invalid varint
+ledger=7 expected=4 matched=2 missing_acceptances=0 missing_rejections=0 mismatches=0 rpc_errors=0 invalid_evidence=2
+
+reconcile_exit=exit status: 2
+cannot reconcile: invalid evidence at /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/.tmpqK4YoE/7: empty receipt inventory
+
+reconcile_exit=exit status: 1
+ledger=8 request=100 unverified_rpc_error=code: 'Client specified an invalid argument', message: "ledger_id does not match the served ledger"
+ledger=8 expected=1 matched=0 missing_acceptances=0 missing_rejections=0 mismatches=0 rpc_errors=1 invalid_evidence=0
+
+test cli::learner::learner_cli_archives_and_publishes_after_quorum_ack_and_restart ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 27 filtered out; finished in 5.86s
+

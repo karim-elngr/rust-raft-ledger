@@ -1,0 +1,42 @@
+[package]
+name = "ledger-node"
+version = "0.1.0"
+edition.workspace = true
+publish = false
+
+[features]
+default = ["kafka"]
+kafka = ["ledger-export-adapters/kafka", "dep:rdkafka"]
+batch-diagnostics = []
+
+[dependencies]
+# Used by the broker integration test. The voter-only test build also omits it.
+rdkafka = { version = "0.39", optional = true }
+ledger-export-adapters = { path = "../ledger-export-adapters", default-features = false }
+ledger-export = { path = "../ledger-export" }
+ledger-api = { path = "../ledger-api" }
+ledger-recovery = { path = "../ledger-recovery" }
+ledger-core = { path = "../ledger-core" }
+ledger-replica = { path = "../ledger-replica" }
+raft = { version = "0.7.0", default-features = false, features = ["protobuf-codec"] }
+protobuf = "2.28"
+prost = "0.14"
+thiserror = "2"
+toml = "0.9"
+serde = { version = "1", features = ["derive"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "net", "signal"] }
+tokio-stream = { version = "0.1", features = ["net"] }
+tonic = { version = "0.14", features = ["tls-ring"] }
+tonic-prost = "0.14"
+tower = { version = "0.5", features = ["limit", "load-shed", "util"] }
+
+[build-dependencies]
+tonic-prost-build = "0.14"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["test-util"] }
+tempfile = "3"
+rcgen = "0.13"
+
+[lints]
+workspace = true

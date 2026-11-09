@@ -1,0 +1,38 @@
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `release` profile [optimized] target(s) in 15.25s
+     Running tests/network.rs (target/release/deps/network-d9a0d0ba1cb8326e)
+
+running 1 test
+process_crash binary=/Users/karimelnaggar/rust-raft-ledger/output/release/ledger-node-macos-arm64 sha256=a4275a236c5de7a5dfc88f8ef3351a66096c4e4def566d7065a7edf0349f60dd
+cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Voter 1 listening on 127.0.0.1:49516.
+Ledger API listening on 127.0.0.1:49519.
+Initialized voter 2.
+Voter 2 listening on 127.0.0.1:49517.
+Ledger API listening on 127.0.0.1:49520.
+Initialized voter 3.
+Voter 3 listening on 127.0.0.1:49518.
+Ledger API listening on 127.0.0.1:49521.
+process_crash acknowledged_receipts=5 accepted=4 rejected=1 protected_index=6 old_leader=1 term=1
+process_crash pending_request=20 applied_index=7 verified_index=6
+process_crash pending_request=21 applied_index=8 verified_index=6
+process_crash pending_request=22 applied_index=9 verified_index=6
+process_crash voter=1 signal=9
+process_crash voter=2 signal=9
+process_crash voter=3 signal=9
+process_crash pending_request=20 client_status=Unknown
+process_crash pending_request=21 client_status=Unknown
+process_crash pending_request=22 client_status=Unknown
+Voter 3 listening on 127.0.0.1:49518.
+Voter 1 listening on 127.0.0.1:49516.
+Ledger API listening on 127.0.0.1:49521.
+Ledger API listening on 127.0.0.1:49519.
+Voter 2 listening on 127.0.0.1:49517.
+Ledger API listening on 127.0.0.1:49520.
+process_crash restarted_same_voter_directories=3 leader=1 term=2
+process_crash saved_receipts_matched=5 identical_acknowledged_retries=5 pending_recovered_before_retry=3 identical_pending_retries=3 unique_postings=5 first_absent_entry=6 final_wallet=81 healthy_voters=3 final_journal_index=19
+test cli::process_crash::protected_all_voter_processes_sigkill_reconcile_inflight ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 27 filtered out; finished in 2.00s
+

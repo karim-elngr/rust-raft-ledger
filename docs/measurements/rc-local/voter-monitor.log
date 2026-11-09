@@ -1,0 +1,16 @@
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+   Compiling ledger-export-adapters v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-export-adapters)
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 19.25s
+     Running tests/network.rs (target/debug/deps/network-86f39575f3b8da1a)
+
+running 1 test
+cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Voter 1 listening on 127.0.0.1:59123.
+Ledger API listening on 127.0.0.1:59126.
+Voter monitor listening on 127.0.0.1:59129.
+test cli::monitor::voter_operator_can_read_status_but_neither_listener_grants_it_payments ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 25 filtered out; finished in 2.06s
+

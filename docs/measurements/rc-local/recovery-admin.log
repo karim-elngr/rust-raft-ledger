@@ -1,0 +1,19 @@
+    Blocking waiting for file lock on build directory
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 12.24s
+     Running tests/recovery_admin.rs (target/debug/deps/recovery_admin-46bc7bfb9976a425)
+
+running 10 tests
+test journal_init_rejects_a_redirect_into_replica_storage_before_writing ... ok
+test legacy_journal_alias_under_the_data_dir_can_point_to_a_separate_tree ... ok
+test recovery_validates_storage_layout_while_voter_initialization_and_run_require_credentials ... ok
+test journal_scrub_reports_the_verified_active_or_fenced_cut_and_detects_interior_damage ... ok
+test full_checkpoint_repair_replaces_a_damaged_image_from_the_complete_journal ... ok
+test recovery_checkpoint_builds_live_from_the_journal_and_advances_by_the_tail ... ok
+test administration_refuses_wrong_generations_and_activates_only_the_exact_imported_log ... ok
+test damaged_or_divergent_recovery_base_keeps_the_fence_and_destination_intact ... ok
+test stopped_voter_reclaims_only_a_sealed_independently_recoverable_prefix ... ok
+test explicitly_restoring_from_journal_survives_image_damage_but_requires_every_command ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.33s
+

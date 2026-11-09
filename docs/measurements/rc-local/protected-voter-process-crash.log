@@ -1,0 +1,35 @@
+
+running 1 test
+process_crash binary=/Users/karimelnaggar/rust-raft-ledger/output/release/ledger-node-voter-macos-arm64 sha256=df39bb5917c1508bc33893236e503161fb3c07e94cfdd340119ac5a230af18ed
+cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Initialized voter 2.
+Voter 1 listening on 127.0.0.1:49584.
+Ledger API listening on 127.0.0.1:49587.
+Initialized voter 3.
+Voter 2 listening on 127.0.0.1:49585.
+Ledger API listening on 127.0.0.1:49588.
+Voter 3 listening on 127.0.0.1:49586.
+Ledger API listening on 127.0.0.1:49589.
+process_crash acknowledged_receipts=5 accepted=4 rejected=1 protected_index=6 old_leader=3 term=1
+process_crash pending_request=20 applied_index=7 verified_index=6
+process_crash pending_request=21 applied_index=8 verified_index=6
+process_crash pending_request=22 applied_index=9 verified_index=6
+process_crash voter=1 signal=9
+process_crash voter=2 signal=9
+process_crash voter=3 signal=9
+process_crash pending_request=20 client_status=Unknown
+process_crash pending_request=21 client_status=Unknown
+process_crash pending_request=22 client_status=Unknown
+Voter 1 listening on 127.0.0.1:Voter 2 listening on 127.0.0.149584.
+:49585.
+VoterLedger API listening on 127.0.0Ledger API listening on 127.0..1:49587.
+0.1:49588.
+ 3 listening on 127.0.0.1:49586.
+Ledger API listening on 127.0.0.1:49589.
+process_crash restarted_same_voter_directories=3 leader=3 term=2
+process_crash saved_receipts_matched=5 identical_acknowledged_retries=5 pending_recovered_before_retry=3 identical_pending_retries=3 unique_postings=5 first_absent_entry=6 final_wallet=81 healthy_voters=3 final_journal_index=19
+test cli::process_crash::protected_all_voter_processes_sigkill_reconcile_inflight ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 27 filtered out; finished in 1.85s
+

@@ -1,0 +1,25 @@
+ProductName:		macOS
+ProductVersion:		27.2
+BuildVersion:		26B123
+Darwin 27.2.0 arm64
+hw.memsize: 8589934592
+hw.ncpu: 8
+machdep.cpu.brand_string: Apple M2
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s5   228Gi    97Gi   106Gi    48%    1.1M  1.1G    0%   /System/Volumes/Data
+rustc 1.99.1 (58cf8f9c3 2026-10-13)
+binary: rustc
+commit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67
+commit-date: 2026-10-13
+host: aarch64-apple-darwin
+release: 1.99.1
+LLVM version: 23.1.1
+cargo 1.99.1 (5f94df478 2026-08-27)
+Apple clang version 21.0.0 (clang-2100.4.1.1)
+Target: arm64-apple-darwin27.2.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+libprotoc 3.21.12
+Matching Java Virtual Machines (1):
+    26 (arm64) "Oracle Corporation" - "OpenJDK 26" /Users/karimelnaggar/Library/Java/JavaVirtualMachines/openjdk-26/Contents/Home
+/Users/karimelnaggar/Library/Java/JavaVirtualMachines/openjdk-26/Contents/Home

@@ -1,0 +1,46 @@
+--- a/crates/ledger-node/tests/network/api.rs
++++ b/crates/ledger-node/tests/network/api.rs
+@@ -43,9 +43,12 @@
+                 cert_pem: server.cert_pem,
+                 key_pem: server.key_pem,
+             };
+-            let serving = ClientServer::start(cluster.handle(id), listener, tls)
+-                .await
+-                .unwrap();
++            let handle = cluster.handle(id);
++            let serving = if handle.is_protected() {
++                ClientServer::start(handle, listener, tls).await
++            } else {
++                ClientServer::start_quorum(handle, listener, tls).await
++            }.unwrap();
+             let target = Endpoint::from_shared(endpoint.clone()).unwrap();
+             let authenticated = target
+                 .tls_config(
+@@ -658,3 +661,7 @@
+ 
+ #[path = "api/load.rs"]
+ mod load;
++
++#[cfg(unix)]
++#[path = "api/capacity.rs"]
++mod capacity;
+--- a/crates/ledger-node/tests/network/recovery.rs
++++ b/crates/ledger-node/tests/network/recovery.rs
+@@ -377,6 +377,17 @@
+     // Only the independent volume, including its recovery base, survives.
+     let recovered = Journal::open(&remote, &spec()).unwrap();
+     let terminal = recovered.fence(&recovered.head().unwrap()).unwrap();
++    if let Some(target) = std::env::var_os("LEDGER_CAPTURE_FIXTURE") {
++        let target = std::path::Path::new(&target);
++        std::fs::create_dir_all(target).unwrap();
++        for item in std::fs::read_dir(&remote).unwrap() {
++            let item = item.unwrap();
++            let name = item.file_name();
++            if name == "HEAD" || name == "LOCK" || name.to_string_lossy().starts_with("segment-") {
++                std::fs::copy(item.path(), target.join(name)).unwrap();
++            }
++        }
++    }
+     let mut replacement = Cluster::with_ids(NEW_VOTERS).await;
+     let replicas = restore_nodes(&replacement, &recovered, &terminal, base_index);
+     let (_, activated) = replicas[0]

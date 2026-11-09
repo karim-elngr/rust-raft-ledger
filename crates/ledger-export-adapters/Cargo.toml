@@ -1,0 +1,33 @@
+[package]
+name = "ledger-export-adapters"
+version = "0.1.0"
+edition.workspace = true
+publish = false
+
+[features]
+default = ["kafka"]
+kafka = ["dep:rdkafka", "dep:futures-executor"]
+
+[[test]]
+name = "kafka"
+required-features = ["kafka"]
+
+[dependencies]
+futures-executor = { version = "0.3", optional = true }
+ledger-api = { path = "../ledger-api" }
+ledger-core = { path = "../ledger-core" }
+ledger-export = { path = "../ledger-export" }
+ledger-recovery = { path = "../ledger-recovery" }
+prost = "0.14"
+protobuf = "2.28"
+raft = { version = "0.7", default-features = false, features = ["protobuf-codec"] }
+rdkafka = { version = "0.39", optional = true, features = ["ssl-vendored"] }
+
+[build-dependencies]
+prost-build = "0.14"
+
+[dev-dependencies]
+tempfile = "3"
+
+[lints]
+workspace = true

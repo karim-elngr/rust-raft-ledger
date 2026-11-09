@@ -1,0 +1,20 @@
+
+running 1 test
+sample,seconds=0.00,disk_bytes=NA,applied=35,archived=35,lag=0,sample_ms=0.024,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=1.00,disk_bytes=NA,applied=268,archived=264,lag=4,sample_ms=0.253,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=2.00,disk_bytes=NA,applied=513,archived=507,lag=6,sample_ms=1.067,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=3.00,disk_bytes=NA,applied=743,archived=737,lag=6,sample_ms=0.038,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=4.01,disk_bytes=NA,applied=1015,archived=1007,lag=8,sample_ms=0.254,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=5.01,disk_bytes=NA,applied=1242,archived=1236,lag=6,sample_ms=0.538,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=6.01,disk_bytes=NA,applied=1454,archived=1446,lag=8,sample_ms=0.056,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=7.01,disk_bytes=NA,applied=1680,archived=1674,lag=6,sample_ms=2.929,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=8.02,disk_bytes=NA,applied=1918,archived=1914,lag=4,sample_ms=0.253,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=9.02,disk_bytes=NA,applied=2167,archived=2159,lag=8,sample_ms=0.054,journal_ms=0.000,disk_scan_ms=0.000
+sample,seconds=10.02,disk_bytes=NA,applied=2408,archived=2405,lag=3,sample_ms=1.853,journal_ms=0.000,disk_scan_ms=0.000
+delivery offered=3000 completed=3000 sender_drops=0 terminal_errors=0
+observer mode=passive samples=11 periodic_journal_head_reads=0 periodic_disk_scans=0 sum_sample_ms=7.319 max_sample_ms=2.929 endpoint_disk_scans=2 initial_scan_ms=2.944 final_scan_ms=4.934 final_journal_head_reads=1 independently_verified_index=2409
+sdk_capacity mode=protected rate=300 seconds=10 offered=3000 completed=3000 posted=2625 rejected=375 same_id_replays=375 busy_resubmits=1961 drops=0 decisions_per_s=298.3 p50_ms=34.57 p95_ms=61.90 p99_ms=76.48 initial_disk_bytes=729088 peak_sampled_disk_bytes=NA final_disk_bytes=8929280 max_sampled_archive_lag=8 cache_hits=2940 cache_db_reads=1996 last_checkpoint=Some(2390)
+test api::capacity::sdk_capacity_and_storage ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 21 filtered out; finished in 11.58s
+

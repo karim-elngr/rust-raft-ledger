@@ -1,0 +1,42 @@
+
+running 1 test
+load_options clients=32 calls_per_client=64 scheduled_rate=300 scheduled_seconds=4 max_outstanding=64
+latency,phase,operation,calls,calls_per_second,p50_ms,p95_ms,p99_ms,wire_attempts,first_resource_exhausted,all_resource_exhausted
+raft_syncs,phase,leader_ready_batches,leader_light_commit_batches,leader_append_batches,leader_appended_entries,leader_journal_append_publications
+phase,name,seconds,accepted_new_payments,business_rejections,transport_errors,scheduler_drops,proposed_commands,proposed_batches,initial_applied,final_applied,protected_index,journal_index,max_sampled_lag,account_db_reads,account_cache_hits
+independent_public_tls_connections=8 retry_first_resource_exhausted=true
+latency,healthy,payment,2048,670.1,26.013,75.041,116.641,2051,1,3
+latency,healthy,quorum_read,512,167.5,25.842,101.525,114.509,512,0,0
+latency,healthy,id_retry,256,83.8,26.872,81.968,83.383,256,0,0
+phase,healthy,3.056,2048,0,0,0,2304,414,67,481,481,481,8,32,4576
+raft_syncs,healthy,810,0,414,414,178
+latency,hot_limited,payment,2048,601.3,28.280,101.198,115.083,2057,3,9
+latency,hot_limited,quorum_read,512,150.3,25.427,67.961,69.551,512,0,0
+latency,hot_limited,id_retry,256,75.2,25.814,30.640,40.116,256,0,0
+phase,hot_limited,3.406,1792,256,0,0,2304,404,482,886,886,886,8,0,1642
+raft_syncs,hot_limited,792,0,404,404,177
+Built recovery checkpoint through index 886. base_index=0 replayed_entries=886
+cluster=42 index=886 term=1 fenced=false sha256=6e0b0d4f75431c417641f9b25229cc40adfb208cc2e44011ad8425f682efdb41
+Local Raft reclaim through=886 reclaimed_entries=885 reclaimed_bytes=591040 live_sst_bytes_before=610015 live_sst_bytes_after=2074
+latency,one_down,payment,2048,601.8,30.193,70.584,88.307,2051,1,3
+latency,one_down,quorum_read,512,150.5,38.616,108.115,117.328,512,0,0
+latency,one_down,id_retry,256,75.2,28.180,62.093,66.621,256,0,0
+phase,one_down,3.403,2048,0,0,0,2304,327,887,1214,1214,1214,8,0,4608
+raft_syncs,one_down,641,0,327,327,178
+catchup_start_index=886 target=1214 observed=1268 reopen_ms=390.60 reopen_plus_catchup_ms=422.67 installed_snapshot=None
+latency,catchup,payment,2048,753.9,29.136,39.366,69.721,2162,21,114
+latency,catchup,quorum_read,512,188.5,27.879,47.875,48.123,512,0,0
+latency,catchup,id_retry,256,94.2,31.756,42.009,42.476,256,0,0
+phase,catchup,2.716,2048,0,0,0,2304,392,1215,1607,1607,1607,8,0,4608
+raft_syncs,catchup,762,0,392,392,170
+catchup_overlap_completed_public_calls=508
+latency,scheduled,payment,900,222.7,42.291,109.364,151.263,1594,358,694
+latency,scheduled,quorum_read,150,37.1,32.647,88.512,139.040,150,0,0
+latency,scheduled,id_retry,150,37.1,39.853,111.675,154.401,255,50,105
+phase,scheduled,4.041,900,0,0,0,1050,735,1608,2343,2343,2343,8,0,1904
+raft_syncs,scheduled,1450,0,735,735,196
+reconciled_unique_payment_entries=8836 verified_accounts=65
+test api::load::public_protected_load_suite ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 21 filtered out; finished in 21.11s
+

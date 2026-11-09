@@ -1,0 +1,16 @@
+
+running 1 test
+sample,seconds=0.00,disk_bytes=729088,applied=35,archived=35,lag=0,sample_ms=1.813,journal_ms=0.271,disk_scan_ms=1.521
+sample,seconds=1.03,disk_bytes=1560576,applied=272,archived=267,lag=5,sample_ms=27.705,journal_ms=21.782,disk_scan_ms=5.639
+sample,seconds=2.37,disk_bytes=2666496,applied=565,archived=559,lag=6,sample_ms=342.161,journal_ms=339.773,disk_scan_ms=2.281
+sample,seconds=3.50,disk_bytes=3407872,applied=852,archived=847,lag=5,sample_ms=129.072,journal_ms=122.717,disk_scan_ms=6.282
+sample,seconds=4.84,disk_bytes=4403200,applied=1162,archived=1157,lag=5,sample_ms=336.215,journal_ms=332.932,disk_scan_ms=3.264
+sample,seconds=7.15,disk_bytes=6729728,applied=1724,archived=1719,lag=5,sample_ms=1309.996,journal_ms=1305.707,disk_scan_ms=4.253
+sample,seconds=9.39,disk_bytes=8331264,applied=2307,archived=2301,lag=6,sample_ms=1236.833,journal_ms=1228.555,disk_scan_ms=8.172
+delivery offered=3000 completed=3000 sender_drops=0 terminal_errors=0
+observer mode=active samples=7 periodic_journal_head_reads=7 periodic_disk_scans=7 sum_sample_ms=3383.795 max_sample_ms=1309.996 endpoint_disk_scans=2 initial_scan_ms=3.248 final_scan_ms=4.100 final_journal_head_reads=1 independently_verified_index=2461
+sdk_capacity mode=protected rate=300 seconds=10 offered=3000 completed=3000 posted=2625 rejected=375 same_id_replays=375 busy_resubmits=2439 drops=0 decisions_per_s=299.4 p50_ms=33.48 p95_ms=69.13 p99_ms=88.68 initial_disk_bytes=729088 peak_sampled_disk_bytes=8863744 final_disk_bytes=8863744 max_sampled_archive_lag=6 cache_hits=2901 cache_db_reads=1983 last_checkpoint=Some(2390)
+test api::capacity::sdk_capacity_and_storage ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 21 filtered out; finished in 11.25s
+

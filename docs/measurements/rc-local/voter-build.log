@@ -1,0 +1,5 @@
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+   Compiling ledger-export-adapters v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-export-adapters)
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `release` profile [optimized] target(s) in 49.26s
+usage: ledger-node <init|run|checkpoint|checkpoint-scrub|rebuild|reclaim|journal-init|journal-head|journal-scrub|journal-checkpoint|journal-checkpoint-from-journal|fence|restore|restore-from-journal|activate> CONFIG.toml

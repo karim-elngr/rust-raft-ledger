@@ -1,0 +1,49 @@
+syntax = "proto3";
+package ledger.export.v1;
+import "ledger/v1/ledger.proto";
+
+// One Kafka record per first committed request decision, including business
+// rejections. Kafka key and event_id both equal "<ledger_id>/<request_id>".
+// Duplicates after uncertain delivery or recovery retain this key. IDs, signed
+// balances and u128 quantities use canonical decimal strings. Account references
+// include their ledger even on a command rejected for addressing a foreign ledger.
+message DecisionEvent {
+  uint32 schema_version = 1; // Always 1 for this envelope.
+  string event_id = 2;
+  string ledger_id = 3;
+  string request_id = 4;
+  string generation = 5;
+  uint64 raft_index = 6;
+  uint32 slot = 7; // Original zero-based command slot in the Raft entry.
+  string asset = 8;
+  uint32 scale = 9;
+  ledger.v1.Decision decision = 10;
+  oneof command {
+    CreateAccount create_account = 11;
+    SetBounds set_bounds = 12;
+    Post post = 13;
+    Reserve reserve = 14;
+    ledger.v1.CaptureReservationRequest capture = 15;
+    ledger.v1.VoidReservationRequest void_reservation = 16;
+  }
+}
+message CreateAccount { ledger.v1.AccountRef account = 1; uint32 code = 2; ledger.v1.Side normal = 3; ledger.v1.Bounds bounds = 4; }
+message SetBounds { ledger.v1.AccountRef account = 1; ledger.v1.Bounds bounds = 2; }
+message Line { ledger.v1.AccountRef account = 1; ledger.v1.Side side = 2; string amount = 3; }
+message Explicit { repeated Line lines = 1; }
+message Source {
+  ledger.v1.AccountRef account = 1;
+  oneof floor { ledger.v1.Empty configured = 2; string at = 3; }
+  optional string cap = 4;
+}
+message Waterfall {
+  string amount = 1;
+  repeated Source sources = 2;
+  repeated Line destinations = 3;
+  ledger.v1.Shortfall shortfall = 4;
+}
+message Funding { oneof kind { Explicit explicit = 1; Waterfall waterfall = 2; } }
+message AvailableAtLeast { ledger.v1.AccountRef account = 1; string amount = 2; }
+message Condition { oneof kind { AvailableAtLeast available_at_least = 1; } }
+message Post { Funding funding = 1; repeated Condition conditions = 2; optional uint64 corrects = 3; }
+message Reserve { string reservation_id = 1; Funding funding = 2; repeated Condition conditions = 3; }

@@ -1,0 +1,21 @@
+[package]
+name = "ledger-api"
+version = "0.1.0"
+edition.workspace = true
+publish = false
+
+[dependencies]
+ledger-core = { path = "../ledger-core" }
+prost = "0.14"
+tokio = { version = "1", features = ["rt", "time"] }
+tonic = { version = "0.14", features = ["tls-ring"] }
+tonic-prost = "0.14"
+
+[build-dependencies]
+tonic-prost-build = "0.14"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "test-util"] }
+
+[lints]
+workspace = true

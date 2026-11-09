@@ -1,0 +1,141 @@
+   Compiling ledger-core v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-core)
+   Compiling ledger-recovery v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-recovery)
+   Compiling ledger-export v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-export)
+   Compiling ledger-replica v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-replica)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.39s
+     Running unittests src/lib.rs (target/debug/deps/ledger_recovery-2672e45322a65834)
+
+running 22 tests
+test tests::activation_requires_the_entire_fenced_history_to_be_intact ... ok
+test journal::encoded_tests::encoded_entries_survive_overlap_and_partial_segment_seek_without_reencoding ... ok
+test journal::base_tests::repair_of_a_damaged_pointer_needs_the_complete_history_and_the_same_pointer_at_publication ... ok
+test journal::base_tests::concurrent_base_publication_chooses_one_manifest_and_rejects_damage ... ok
+test journal::base_tests::a_checksum_valid_base_from_an_unpublished_fork_cannot_restore_or_activate ... ok
+test journal::base_tests::publish_allows_concurrent_payments_and_fast_restore_authenticates_only_tail ... ok
+test journal::base_tests::exact_base_cas_and_interruptions_preserve_published_authority ... ok
+test journal::base_tests::incremental_ancestry_remembers_generations_that_never_appended ... ok
+test tests::invisible_staging_and_declined_writes_leave_previous_head_usable ... ok
+test tests::failed_verification_or_a_concurrent_activation_cannot_publish_a_replacement ... ok
+test tests::fence_serializes_with_publish_and_activation_retains_exact_history ... ok
+test tests::count_entry_and_segment_limits_preserve_the_last_head ... ok
+test tests::one_publication_wins_and_ambiguous_retry_confirms_the_durable_head ... ok
+test tests::retry_recovers_from_interruption_on_either_side_of_head_rename ... ok
+test tests::damaged_middle_segment_is_detected_before_replay_begins ... ok
+test tests::reverse_verification_visits_authenticated_groups_once_and_propagates_errors ... ok
+test tests::reverse_verification_rejects_foreign_anchors_and_missing_history ... ok
+test tests::replacement_replay_checks_historical_ids_before_import_and_delivers_entries_in_order ... ok
+test tests::replacement_ids_are_opaque_and_can_never_repeat_an_old_generation ... ok
+test tests::two_fresh_replacements_cannot_activate_from_the_same_fence ... ok
+test tests::replacement_evidence_is_bound_to_the_journal_checked_by_the_caller ... ok
+test tests::contested_lock_times_out_without_publishing_or_reporting_a_cas_conflict ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.52s
+
+     Running unittests src/lib.rs (target/debug/deps/ledger_replica-ee6540ff72a11569)
+
+running 102 tests
+test account_cache::tests::filling_a_miss_after_publication_does_not_reintroduce_an_old_row ... ok
+test account_cache::tests::full_slot_allocation_fits_the_budget_and_clear_reuses_it ... ok
+test batch::tests::rejects_mixed_ledgers_and_empty_proposals_without_mutating_the_batch ... ok
+test account_cache::tests::a_pinned_old_read_cannot_observe_or_replace_a_published_new_version ... ok
+test account_cache::tests::collision_checks_the_entire_key_and_missing_or_failed_reads_do_not_evict ... ok
+test batch::tests::assembling_prepared_commands_matches_the_existing_v1_encoding ... ok
+test batch::tests::count_and_byte_overflow_leave_the_command_for_the_next_batch ... ok
+test checkpoint_files::tests::rejects_duplicate_path_traversal_and_missing_manifest_dependencies ... ok
+test checkpoint_files::tests::full_scrub_hashes_immutable_bytes_even_when_local_file_identity_is_unchanged ... ok
+test checkpoint_files::tests::rejects_damaged_files_wrong_boundary_symlinks_and_unknown_contents ... ok
+test checkpoint_files::tests::startup_only_removes_marked_abandoned_captures_with_known_flat_files ... ok
+test checkpoint_files::tests::collection_skips_the_active_and_pinned_generations_and_resumes_partial_retirement ... ok
+test checkpoint_files::tests::reuses_only_the_same_immutable_inode_and_keeps_working_metadata_private ... ok
+test checkpoint_files::tests::transfer_tests::superseded_offer_reuses_only_identical_staged_files_and_partial_ranges ... ok
+test checkpoint_files::tests::transfer_tests::resumes_inside_a_file_rejects_bad_data_and_skips_identical_local_tables ... ok
+test checkpoint_files::transfer::replay::tests::prefer_physical_on_at_least_half_file_bytes_or_without_a_bounded_earlier_cut ... ok
+test codec::tests::bounds_encoded_bytes_and_all_collections ... ok
+test codec::tests::preserves_complete_ordered_payloads_and_replay ... ok
+test codec::tests::rejects_noncanonical_negative_zero_and_invalid_option_tags ... ok
+test codec::tests::void_matches_the_v1_golden_bytes ... ok
+test checkpoint_files::tests::transfer_tests::validates_wire_bounds_before_staging_and_preserves_unowned_inbox_contents ... ok
+test batch::tests::voter_checks_leadership_and_ledger_before_appending ... ok
+test checkpoint_files::tests::transfer_tests::expiration_keeps_active_recent_and_unknown_workspaces_and_reclaims_idle_data ... ok
+test journal_verifier::tests::competing_verifiers_retry_from_the_winning_durable_head ... ok
+test journal_verifier::tests::counts_local_journal_publications_separately_from_observation_and_failed_rounds ... ok
+test journal_verifier::tests::follower_can_save_the_compared_cut_while_a_leader_extends_the_journal ... ok
+test checkpoint::tests::restart_uses_published_cut_and_collects_a_sealed_unpublished_successor ... ok
+test checkpoint_files::replay_tests::a_bad_replay_base_falls_back_and_a_partial_physical_transfer_stays_physical ... ok
+test journal_verifier::tests::observer_never_publishes_and_previously_saved_digest_rejects_foreign_history ... ok
+test journal_verifier::tests::raft_sync_counters_distinguish_grouped_appends_hard_state_and_message_only_ready ... ok
+test journal_verifier::tests::grouped_publications_advance_the_durable_anchor_at_the_entry_interval ... ok
+test projection::tests::a_metadata_hardlink_is_rejected_before_rocksdb_can_modify_the_seal ... ok
+test projection::tests::capture_requires_a_committed_cut_and_never_cleans_an_existing_staging_name ... ok
+test checkpoint_files::replay_tests::replay_authenticates_local_and_incoming_history_while_live_state_stays_private ... ok
+test checkpoint_files::tests::transfer_tests::moves_a_real_projection_between_voters_and_retains_both_pins_during_gc ... ok
+test journal_verifier::tests::follower_startup_can_inspect_a_published_generation_while_a_writer_holds_the_lock ... ok
+test projection::tests::dangling_or_mismatched_indexes_are_storage_errors ... ok
+test projection::tests::capture_and_install_share_ssts_with_private_writable_metadata ... ok
+test projection::tests::refuses_unknown_contents_and_symlink_targets ... ok
+test projection::tests::export_resumes_inside_a_microbatch_and_skips_retries_and_empty_entries ... ok
+test journal_verifier::tests::restarted_verifier_compares_only_the_suffix_and_still_checks_serving_authority ... ok
+test projection::tests::foreign_ledger_hold_is_a_storage_error_before_advancing_or_recording_a_rejection ... ok
+test projection::tests::failed_publication_preserves_cache_history_and_index ... ok
+test raft_store::journal_anchor::tests::concurrent_verifiers_cannot_replace_an_unobserved_durable_anchor ... ok
+test projection::tests::refuses_unrecognized_working_files_before_cleanup_or_materialization ... ok
+test projection::tests::same_batch_corrections_and_retries_use_the_first_immutable_decision ... ok
+test raft_store::journal_anchor::tests::an_optional_anchor_survives_restart_and_only_advances_through_committed_live_heads ... ok
+test projection::tests::incomplete_install_can_retry_and_wrong_frontier_or_ledger_fails_closed ... ok
+test projection::tests::materializes_first_decisions_and_all_accounts_released_by_partial_capture ... ok
+test raft_store::journal_anchor::tests::tampered_anchor_wrong_voter_and_changed_local_boundary_cannot_be_reused ... ok
+test projection::tests::reopening_after_db_write_before_cache_publication_replays_raft_and_starts_cold ... ok
+test projection::tests::damaged_clone_frontier_or_missing_family_never_replaces_prior_data ... ok
+test raft_store::snapshot::tests::a_commit_advance_after_successful_replay_checks_interior_rows_before_ready_adopts ... ok
+test raft_store::snapshot::tests::encoded_history_transfer_completes_replay_and_reexports_original_wire_bytes ... ok
+test raft_store::snapshot::tests::expiry_discards_only_the_unpinned_matching_stage_and_preserves_adopted_history ... ok
+test raft_store::snapshot::tests::corrupt_logical_replication_floor_is_repairable_without_losing_log_rows ... ok
+test raft_store::snapshot::tests::native_snapshot_retains_nonvoting_membership_after_reopen_and_rejects_role_changes ... ok
+test raft_store::snapshot::tests::proof_hashes_original_protobuf_order_and_rejects_conflicting_committed_overlap ... ok
+test raft_store::snapshot::tests::interrupted_transfer_is_invisible_then_ready_atomically_adopts_only_missing_bytes ... ok
+test raft_store::reclaim::tests::partial_adopted_ranges_are_physically_pruned_and_their_matching_entry_remains_local ... ok
+test raft_store::snapshot::tests::replay_mismatch_invalidates_only_the_unadopted_exact_stage ... ok
+test raft_store::snapshot::tests::replay_proof_covers_local_gap_resumed_history_and_source_identity ... ok
+test raft_store::snapshot::tests::successive_remote_seals_retain_earlier_ranges_for_export_and_genesis_audit ... ok
+test raft_store::tests::checkpoint_restart_checks_its_boundary_and_the_entire_suffix_even_past_commit ... ok
+test raft_store::reclaim::tests::reclaim_advances_an_authenticated_older_anchor_and_protected_restart_only_reads_tail ... ok
+test raft_store::tests::a_decodable_pointer_still_requires_a_positive_committed_index_and_matching_term ... ok
+test raft_store::tests::fixed_membership_identity_and_empty_log_survive_restart ... ok
+test raft_store::reclaim::tests::raw_mismatch_preserves_local_rows_and_prior_floor ... ok
+test raft_store::tests::checkpoint_skips_old_bytes_on_restart_but_old_log_reads_and_full_rebuild_check_them ... ok
+test raft_store::tests::persistence_reports_only_completed_wal_batches ... ok
+test raft_store::tests::overwritten_suffix_and_light_ready_commit_survive_restart ... ok
+test raft_store::tests::only_monotonic_committed_checkpoints_can_be_published ... ok
+test raft_store::tests::storage_serves_only_a_published_checkpoint_covering_the_requested_index ... ok
+test raft_store::tests::malformed_pointer_can_be_ignored_for_explicit_full_verification_then_cleared ... ok
+test recovery::base::scratch::tests::interrupted_builder_is_reclaimed_only_if_all_surviving_files_are_recognized ... ok
+test raft_store::tests::refuses_gaps_committed_rewrites_and_double_votes_without_partial_writes ... ok
+test recovery::base_image::tests::checks_manifest_bounds_and_paths_before_using_names ... ok
+test raft_store::tests::refuses_recovery_from_a_log_with_a_missing_record ... ok
+test recovery::base_image::tests::honors_multiple_reader_pins_and_resumes_detached_partial_retirement ... ok
+test recovery::base_image::tests::verifies_each_consumer_copy_and_refuses_unknown_content_or_mutable_aliasing ... ok
+test raft_store::reclaim::tests::crashes_on_both_sides_of_the_pointer_switch_leave_local_restart_independent ... ok
+test recovery::base_image::tests::exports_a_real_rocksdb_pair_and_gives_each_voter_private_writable_files ... ok
+test recovery::tests::export_is_bounded_by_committed_prefix_size_and_count ... ok
+test recovery::base::registry::tests::offline_voter_pins_keep_their_exact_image_across_new_publications ... ok
+test recovery::tests::concurrent_restores_publish_at_most_one_new_voter_identity ... ok
+test raft_store::reclaim::tests::reclaim_retains_a_newer_anchor_and_refuses_a_saved_fork ... ok
+test recovery::tests::corrupt_replacement_checkpoint_fails_closed_and_its_full_log_can_rebuild ... ok
+test recovery::tests::invalid_committed_payload_never_publishes_a_partial_voter ... ok
+test recovery::tests::interrupted_restore_preserves_unrecognized_files_and_cleans_private_partial_data_on_retry ... ok
+test raft_store::reclaim::tests::physical_bytes_shrink_and_a_replacement_base_preserves_exact_reads_repair_and_votes ... ok
+test replica::tests::invalid_voter_sets_do_not_initialize_a_directory ... ok
+test replica::tests::missing_raft_store_does_not_bootstrap_over_a_surviving_ledger ... ok
+test recovery::tests::interrupted_after_sealing_before_directory_publication_can_retry ... ok
+test recovery::exact_export_tests::noncanonical_wire_bytes_round_trip_through_genesis_and_checkpoint_restore ... ok
+test replica::tests::reopen_rebuilds_a_v1_single_family_projection_from_the_durable_log ... ok
+test raft_store::snapshot::tests::replay_budgets_cover_the_base_and_gaps_in_durable_stage_are_detected ... ok
+test replica::tests::unsupported_committed_format_stops_local_reads_and_replay ... ok
+test recovery::tests::only_publishes_a_verified_fenced_cut_into_fresh_voter_storage ... ok
+test recovery::tests::restored_learner_uses_the_neutral_image_and_retains_its_native_role ... ok
+test replica::tests::restart_binds_identity_but_accepts_voter_list_reordering ... ok
+test recovery::tests::restore_and_first_protected_read_use_the_independent_base_and_exact_tail ... ok
+test replica::snapshot::tests::restart_selects_the_old_or_new_payment_view_at_the_durable_snapshot_ready_boundary ... ok
+
+test result: ok. 102 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 32.55s
+

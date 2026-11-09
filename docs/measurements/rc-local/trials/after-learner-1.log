@@ -1,0 +1,18 @@
+
+running 1 test
+sample,seconds=0.02,disk_bytes=802816,applied=39,archived=32,lag=7
+sample,seconds=1.03,disk_bytes=1843200,applied=316,archived=310,lag=6
+sample,seconds=2.08,disk_bytes=2809856,applied=609,archived=602,lag=7
+sample,seconds=3.09,disk_bytes=3584000,applied=854,archived=847,lag=7
+sample,seconds=4.11,disk_bytes=4403200,applied=1139,archived=1132,lag=7
+sample,seconds=5.12,disk_bytes=5410816,applied=1454,archived=1437,lag=17
+sample,seconds=6.18,disk_bytes=6307840,applied=1743,archived=1725,lag=18
+sample,seconds=7.22,disk_bytes=7303168,applied=1992,archived=1978,lag=14
+sample,seconds=8.29,disk_bytes=8040448,applied=2280,archived=2270,lag=10
+sample,seconds=9.35,disk_bytes=8810496,applied=2541,archived=2533,lag=8
+delivery offered=3000 completed=3000 sender_drops=0 terminal_errors=0
+sdk_capacity mode=learner rate=300 seconds=10 offered=3000 completed=3000 posted=2625 rejected=375 same_id_replays=375 busy_resubmits=0 drops=0 decisions_per_s=298.9 p50_ms=8.76 p95_ms=36.04 p99_ms=78.94 initial_disk_bytes=802816 peak_sampled_disk_bytes=9666560 final_disk_bytes=9666560 max_sampled_archive_lag=18 cache_hits=3374 cache_db_reads=2042 last_checkpoint=Some(2571)
+test api::capacity::sdk_capacity_and_storage ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 24 filtered out; finished in 11.12s
+

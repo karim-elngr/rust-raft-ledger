@@ -1,0 +1,11 @@
+
+running 1 test
+sample,seconds=0.00,disk_bytes=729088,applied=35,archived=35,lag=0
+sample,seconds=2.36,disk_bytes=4104192,applied=432,archived=431,lag=1
+sample,seconds=3.44,disk_bytes=6254592,applied=603,archived=602,lag=1
+delivery offered=12000 completed=4573 sender_drops=7427 terminal_errors=0
+sdk_capacity mode=protected rate=3000 seconds=4 offered=12000 completed=4573 posted=3998 rejected=575 same_id_replays=577 busy_resubmits=90 drops=7427 decisions_per_s=1120.0 p50_ms=44.36 p95_ms=66.70 p99_ms=79.92 initial_disk_bytes=729088 peak_sampled_disk_bytes=7901184 final_disk_bytes=7901184 max_sampled_archive_lag=1 cache_hits=1481 cache_db_reads=2152 last_checkpoint=Some(513)
+test api::capacity::sdk_capacity_and_storage ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 24 filtered out; finished in 5.47s
+

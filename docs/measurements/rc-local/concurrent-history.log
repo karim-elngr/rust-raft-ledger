@@ -1,0 +1,39 @@
+    Blocking waiting for file lock on build directory
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 16.68s
+     Running tests/network.rs (target/debug/deps/network-86f39575f3b8da1a)
+
+running 2 tests
+test api::history::model_rejects_double_spends_and_completed_before_read_violations ... ok
+test api::history::two_wallet_history_survives_journal_outage_and_leader_replacement ... history_event order=0 us=0 schedule=two-wallet-v1 old_leader=2 request_ids=[40, 41] amounts=[7, 5] initial_customer=10 initial_merchant=0
+history_event order=1 us=71 invoke Balance(2)
+history_event order=2 us=5828 return Balance(2) Balance(10)
+history_event order=3 us=6396 archive_detached
+history_event order=4 us=6436 invoke Pay(0)
+history_event order=5 us=6558 invoke Pay(1)
+history_event order=6 us=6615 invoke Balance(3)
+history_event order=7 us=12979 quorum_applied index=6 covered=Some(5) batches=1
+history_event order=8 us=880801 leader_replaced new_leader=3
+history_event order=9 us=899155 unknown Pay(1) code=Unavailable
+history_event order=10 us=899206 return Pay(1) Unknown
+history_event order=11 us=3007939 unknown Pay(0) code=DeadlineExceeded
+history_event order=12 us=3008020 return Pay(0) Unknown
+history_event order=13 us=3008180 unknown Balance(3) code=DeadlineExceeded
+history_event order=14 us=3008282 return Balance(3) Unknown
+history_event order=15 us=3008915 archive_restored
+history_event order=16 us=3008947 invoke Receipt(0)
+history_event order=17 us=3009056 invoke Receipt(1)
+history_event order=18 us=3121627 return Receipt(0) Posted(2)
+history_event order=19 us=3121692 return Receipt(1) BelowMinimum
+history_event order=20 us=3121712 invoke Pay(0)
+history_event order=21 us=3121784 invoke Pay(1)
+history_event order=22 us=3121817 invoke Balance(2)
+history_event order=23 us=3125130 return Balance(2) Balance(3)
+history_event order=24 us=3139762 return Pay(0) Posted(2)
+history_event order=25 us=3139808 return Pay(1) BelowMinimum
+history_event order=26 us=3139821 invoke Balance(3)
+history_event order=27 us=3143598 return Balance(3) Balance(7)
+history_event order=28 us=3143636 verified calls=10 wallet=Balance(3) merchant=Balance(7)
+ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 22 filtered out; finished in 4.07s
+

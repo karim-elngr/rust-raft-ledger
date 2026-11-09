@@ -1,0 +1,26 @@
+output/release/ledger-node-macos-arm64:       Mach-O 64-bit executable arm64
+output/release/ledger-node-voter-macos-arm64: Mach-O 64-bit executable arm64
+output/release/ledger-node-macos-arm64:
+	/usr/lib/libz.1.dylib (compatibility version 1.0.0, current version 1.2.12)
+	/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.32.0)
+	/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.40.3)
+output/release/ledger-node-voter-macos-arm64:
+	/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.32.0)
+	/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.40.3)
+Executable=/Users/karimelnaggar/rust-raft-ledger/output/release/ledger-node-macos-arm64
+Identifier=ledger_node-3e04494e8397cbf6
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=204280 flags=0x20002(adhoc,linker-signed) hashes=6380+0 location=embedded
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
+output/release/ledger-node-macos-arm64: valid on disk
+output/release/ledger-node-macos-arm64: satisfies its Designated Requirement
+output/release/ledger-node-voter-macos-arm64: valid on disk
+output/release/ledger-node-voter-macos-arm64: satisfies its Designated Requirement
+usage: ledger-node <init|run|checkpoint|checkpoint-scrub|rebuild|reclaim|journal-init|journal-head|journal-scrub|journal-checkpoint|journal-checkpoint-from-journal|fence|restore|restore-from-journal|activate> CONFIG.toml
+usage: ledger-node <init|run|checkpoint|checkpoint-scrub|rebuild|reclaim|journal-init|journal-head|journal-scrub|journal-checkpoint|journal-checkpoint-from-journal|fence|restore|restore-from-journal|activate> CONFIG.toml

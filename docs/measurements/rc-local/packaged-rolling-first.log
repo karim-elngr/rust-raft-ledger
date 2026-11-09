@@ -1,0 +1,35 @@
+
+running 1 test
+rolling baseline=/Users/karimelnaggar/rust-raft-ledger/target/rc-before-build/release/ledger-node candidate=/Users/karimelnaggar/rust-raft-ledger/output/release/ledger-node-macos-arm64
+cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Voter 1 listening on 127.0.0.1:61792.
+Ledger API listening on 127.0.0.1:61796.
+Initialized voter 2.
+Voter 2 listening on 127.0.0.1:61794.
+Ledger API listening on 127.0.0.1:61797.
+Initialized voter 3.
+Voter 3 listening on 127.0.0.1:61795.
+Ledger API listening on 127.0.0.1:61798.
+rolling baseline_leader=2 selected_follower=1 original_request=11 entry=1 rejected_request=12
+Voter 1 listening on 127.0.0.1:61792.
+Ledger API listening on 127.0.0.1:61796.
+rolling candidate_node=1 applied=6 sealed=Some(6) through=6
+rolling candidate_node=1 applied=9 sealed=Some(9) through=9
+rolling mixed_majority=[1, 3] request=14 entry=3 retry=identical
+Voter 2 listening on 127.0.0.1:61794.
+Ledger API listening on 127.0.0.1:61797.
+rolling baseline_listener_joined=2
+
+thread 'cli::rolling::protected_rolling_upgrade_and_rollback' (974528) panicked at crates/ledger-node/tests/network/cli/rolling.rs:43:10:
+called `Result::unwrap()` on an `Err` value: Status { code: Unavailable, message: "write outcome unknown after an earlier attempt (last status ResourceExhausted); retry with the original request ID and payload", source: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test cli::rolling::protected_rolling_upgrade_and_rollback ... FAILED
+
+failures:
+
+failures:
+    cli::rolling::protected_rolling_upgrade_and_rollback
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 26 filtered out; finished in 5.49s
+

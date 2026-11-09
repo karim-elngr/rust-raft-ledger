@@ -1,0 +1,32 @@
+    Finished `release` profile [optimized] target(s) in 0.62s
+     Running tests/network.rs (target/release/deps/network-1c0b845e8585641f)
+
+running 3 tests
+test api::load::public_protected_load_suite ... load_options clients=32 calls_per_client=64 scheduled_rate=300 scheduled_seconds=60 max_outstanding=64
+latency,phase,operation,calls,calls_per_second,p50_ms,p95_ms,p99_ms,wire_attempts,first_resource_exhausted,all_resource_exhausted
+raft_syncs,phase,leader_ready_batches,leader_light_commit_batches,leader_append_batches,leader_appended_entries,leader_journal_append_publications
+phase,name,seconds,accepted_new_payments,business_rejections,transport_errors,scheduler_drops,proposed_commands,proposed_batches,initial_applied,final_applied,protected_index,journal_index,max_sampled_lag,account_db_reads,account_cache_hits
+independent_public_tls_connections=8 retry_first_resource_exhausted=true
+latency,healthy,payment,2048,804.1,28.976,36.891,38.932,2098,17,50
+latency,healthy,quorum_read,512,201.0,27.615,36.095,39.954,512,0,0
+latency,healthy,id_retry,256,100.5,27.651,50.926,54.064,256,0,0
+phase,healthy,2.547,2048,0,0,0,2304,455,67,522,522,522,8,32,4576
+raft_syncs,healthy,887,0,455,455,172
+latency,hot_limited,payment,2048,744.7,31.277,39.957,49.938,2048,0,0
+latency,hot_limited,quorum_read,512,186.2,30.262,54.744,54.975,512,0,0
+latency,hot_limited,id_retry,256,93.1,30.879,39.890,41.413,256,0,0
+phase,hot_limited,2.750,1792,256,0,0,2304,287,523,810,810,810,7,0,1478
+raft_syncs,hot_limited,571,0,287,287,168
+Built recovery checkpoint through index 810. base_index=0 replayed_entries=810
+cluster=42 index=810 term=1 fenced=false sha256=75bdbbe8069aab479b1aab181316a18f21fae3a2b632c4ec12f8131d1e61e2d7
+Local Raft reclaim through=810 reclaimed_entries=809 reclaimed_bytes=588684 live_sst_bytes_before=606714 live_sst_bytes_after=2074
+latency,one_down,payment,2048,528.0,45.569,57.534,91.076,2073,5,25
+latency,one_down,quorum_read,512,132.0,46.698,60.648,90.953,512,0,0
+latency,one_down,id_retry,256,66.0,45.343,54.118,78.209,256,0,0
+phase,one_down,3.879,2048,0,0,0,2304,381,811,1192,1192,1192,8,0,4608
+raft_syncs,one_down,755,0,381,381,176
+
+thread 'api::load::public_protected_load_suite' (150333) panicked at crates/ledger-node/tests/network/api/load.rs:543:68:
+called `Result::unwrap()` on an `Err` value: Io(Custom { kind: TimedOut, error: "recovery journal lock timed out" })
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+FAILED

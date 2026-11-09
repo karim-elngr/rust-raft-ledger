@@ -1,0 +1,32 @@
+Local POSIX journal mount probe, 2026-11-09
+macOS-27.2-arm64-arm-64bit
+Processes on one host using a new local temporary directory.
+Build: cargo build --locked -p ledger-recovery --example journal_mount_probe
+Executable SHA-256: 7c250b385d0e110515c8c55f57ff098b1f0784967476010f4ab7f9fb6a9aee39
+$ target/debug/examples/journal_mount_probe holder /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-journal-mount-probe-6mwi1tlj/not-mounted
+Error: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+exit=1
+$ target/debug/examples/journal_mount_probe observer /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-journal-mount-probe-6mwi1tlj/not-mounted 00000000000000000000000000000001
+Error: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+exit=1
+Missing mount path remained absent.
+$ target/debug/examples/journal_mount_probe holder /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-journal-mount-probe-6mwi1tlj
+holder ready run_id=b987fe0f83726a27f86294ace233f992 path=/private/var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-journal-mount-probe-6mwi1tlj/ledger-mount-probe-b987fe0f83726a27f86294ace233f992
+$ target/debug/examples/journal_mount_probe observer /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-journal-mount-probe-6mwi1tlj 00000000000000000000000000000001
+Error: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+exit=1
+Wrong valid-format ID created no run.
+$ target/debug/examples/journal_mount_probe holder /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-journal-mount-probe-6mwi1tlj/ledger-mount-probe-b987fe0f83726a27f86294ace233f992/journal
+Error: "scratch directory is inside a recovery journal"
+exit=1
+$ target/debug/examples/journal_mount_probe observer /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-journal-mount-probe-6mwi1tlj b987fe0f83726a27f86294ace233f992
+observer confirmed exclusive lock run_id=b987fe0f83726a27f86294ace233f992
+observer verified published index=16 full_replay=16
+observer verified published index=32 full_replay=32
+observer passed unlocked_head_and_segment_samples=60 reply_index=33
+exit=0
+holder (continued)
+holder passed observer publication and full replay index=33
+exit=0
+Local scratch removed after both processes exited.
+This run sampled concurrent publication and verified entries on local storage. Cross-host lock arbitration, mount behavior after reconnect, and durability across storage power loss require separate deployment evidence.

@@ -1,0 +1,10 @@
+
+running 1 test
+limit=1 clients=1 accepted=45 rejected=3 busy=0 decisions/s=57.9 p99_ms=27.892 mean_queue_us=53.58 proposals=48 ready=96 light_commit=0 append_batches=48 appended_entries=48 leader_syncs/decision=2.000 all_voter_syncs/decision=6.000 publications=48 decisions/proposal=1.00 entries/append=1.00
+limit=1 clients=24 accepted=360 rejected=24 busy=5484 decisions/s=209.7 p99_ms=1072.647 mean_queue_us=1362.84 proposals=384 ready=697 light_commit=0 append_batches=384 appended_entries=384 leader_syncs/decision=1.815 all_voter_syncs/decision=4.732 publications=101 decisions/proposal=1.00 entries/append=1.00
+limit=256 clients=1 accepted=45 rejected=3 busy=0 decisions/s=45.3 p99_ms=64.065 mean_queue_us=22.69 proposals=48 ready=96 light_commit=0 append_batches=48 appended_entries=48 leader_syncs/decision=2.000 all_voter_syncs/decision=6.000 publications=48 decisions/proposal=1.00 entries/append=1.00
+limit=256 clients=24 accepted=360 rejected=24 busy=0 decisions/s=716.3 p99_ms=60.780 mean_queue_us=92.74 proposals=37 ready=74 light_commit=0 append_batches=37 appended_entries=37 leader_syncs/decision=0.193 all_voter_syncs/decision=0.578 publications=28 decisions/proposal=10.38 entries/append=1.00
+test group_commit::protected_group_commit_comparison ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 24 filtered out; finished in 5.90s
+

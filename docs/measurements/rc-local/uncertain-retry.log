@@ -1,0 +1,9 @@
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.16s
+     Running unittests src/lib.rs (target/debug/deps/ledger_api-8d7cc96baf55c4c4)
+
+running 1 test
+test client::tests::terminal_error_at_a_later_seed_preserves_an_unknown_write ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 19 filtered out; finished in 0.01s
+

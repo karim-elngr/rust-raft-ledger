@@ -1,0 +1,9 @@
+    Blocking waiting for file lock on build directory
+    Finished `release` profile [optimized] target(s) in 35.56s
+     Running tests/network.rs (target/release/deps/network-bb5a66d8b2b4949b)
+
+running 1 test
+test recovery::total_voter_disk_loss_preserves_protected_partial_waterfall_and_retries ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 21 filtered out; finished in 2.65s
+

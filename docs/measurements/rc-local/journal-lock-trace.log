@@ -1,0 +1,9 @@
+
+running 1 test
+journal_lock pid=97398 operation=head wait_us=4 hold_us=4887
+journal_lock pid=97398 operation=head wait_us=5 hold_us=2670
+journal_lock pid=97398 operation=append_encoded wait_us=4 hold_us=10621
+test journal_verifier::tests::follower_startup_can_inspect_a_published_generation_while_a_writer_holds_the_lock ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 101 filtered out; finished in 2.45s
+

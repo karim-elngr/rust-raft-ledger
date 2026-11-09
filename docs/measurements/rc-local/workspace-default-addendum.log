@@ -1,0 +1,515 @@
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+   Compiling ledger-recovery v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-recovery)
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.89s
+     Running unittests src/lib.rs (target/debug/deps/ledger_api-c92e1f4d4bfbdaeb)
+
+running 20 tests
+test adapter::tests::capture_preserves_allocation_order_and_full_does_not_default_to_keep_or_release ... ok
+test adapter::tests::collection_limits_are_admission_errors_and_empty_lines_are_a_business_decision ... ok
+test adapter::tests::entry_and_rejection_responses_preserve_zero_ids_and_specific_context ... ok
+test adapter::tests::integers_use_canonical_ascii_and_the_entire_signed_magnitude_range ... ok
+test adapter::tests::mutation_choice_presence_and_business_disposition_are_preserved ... ok
+test adapter::tests::protobuf_field_order_does_not_change_request_identity ... ok
+test adapter::tests::rust_and_cpp_protobuf_round_trip_extreme_balances_and_counters ... ok
+test adapter::tests::unbounded_rules_and_explicit_zero_are_distinct_and_bad_code_is_malformed ... ok
+test adapter::tests::waterfall_preserves_source_order_floor_instructions_caps_and_conditions ... ok
+test client::tests::a_stalled_first_seed_cannot_consume_a_short_deadline ... ok
+test client::tests::configuration_requires_numbered_https_seeds_and_a_client_identity ... ok
+test client::tests::discovery_is_bounded_and_a_slow_protected_leader_can_finish ... ok
+test client::tests::lost_write_reply_followed_by_overload_preserves_unknown_outcome ... ok
+test client::tests::overload_and_application_cancellation_are_terminal ... ok
+test client::tests::oversized_requests_are_rejected_before_cloning_or_dialing_a_seed ... ok
+test client::tests::report_admission_overload_for_reads_and_writes_with_only_known_redirects ... ok
+test client::tests::stale_leader_hint_rotates_to_an_untried_seed_with_the_original_body ... ok
+test client::tests::stalled_attempt_yields_to_another_seed_and_overall_deadline_is_final ... ok
+test client::tests::terminal_error_at_a_later_seed_preserves_an_unknown_write ... ok
+test client::tests::unknown_hint_never_selects_an_unconfigured_target ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running unittests src/lib.rs (target/debug/deps/ledger_core-bf2aeff03e58e5b0)
+
+running 21 tests
+test account::tests::accounts_expose_read_only_fields_and_decimal_balances ... ok
+test account::tests::enforce_pending_decreases_and_increases_independently ... ok
+test account::tests::posted_and_available_are_exact_on_both_normal_sides ... ok
+test account::tests::reject_inverted_bounds_and_counter_capacity_overflow ... ok
+test account::tests::sign_and_spending_capacity_cover_the_full_range ... ok
+test funding::tests::accepts_one_unit_from_double_maximum_headroom ... ok
+test funding::tests::allocates_gross_pending_spend_in_source_order ... ok
+test funding::tests::explicit_lines_preserve_order_and_require_accounts_in_the_ledger ... ok
+test funding::tests::fully_funded_waterfall_still_validates_later_sources ... ok
+test funding::tests::stricter_floor_and_cap_limit_contributions ... ok
+test funding::tests::validates_all_destination_sides_and_target_sum ... ok
+test funding::tests::validates_exact_totals_beyond_a_single_counter ... ok
+test posting::tests::captures_at_capacity_release_the_pending_amount_before_posting ... ok
+test posting::tests::immediate_post_checks_net_balance_but_preserves_gross_totals ... ok
+test posting::tests::overflow_precedes_policy_and_uses_canonical_account_order ... ok
+test reservation::tests::allocation_validation_is_line_specific_and_preserves_hold ... ok
+test reservation::tests::opening_preserves_line_ids_and_initial_amounts ... ok
+test reservation::tests::partial_capture_keeps_a_balanced_remainder_for_full_capture ... ok
+test reservation::tests::partial_release_closes_hold_and_removes_all_remaining_pending ... ok
+test reservation::tests::two_line_amount_requires_disposition_only_if_partial ... ok
+test reservation::tests::void_after_capture_releases_only_outstanding_lines ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/contract.rs (target/debug/deps/contract-74168c055e337bab)
+
+running 5 tests
+test a_correction_links_to_the_immutable_original_and_validates_the_reference ... ok
+test account_numbers_and_request_ids_are_local_to_each_ledger ... ok
+test competing_waterfalls_retain_the_first_split_and_the_second_shortfall_across_batches ... ok
+test ordered_conditions_run_against_pre_posting_balances_before_account_limits ... ok
+test outstanding_destination_capacity_survives_policy_updates_and_both_capture_modes ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/ledger.rs (target/debug/deps/ledger-a7cbd02d1213cb3f)
+
+running 3 tests
+test checked_posting_is_atomic_when_the_last_account_fails ... ok
+test policy_change_and_rejection_have_stable_request_outcomes ... ok
+test replay_preserves_partial_waterfall_capture_and_sticky_retries ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/mixed_payments.rs (target/debug/deps/mixed_payments-70e7c2d65aef3b55)
+
+running 1 test
+test mixed_payment_history_matches_an_independent_wallet_model ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests/replay_compat.rs (target/debug/deps/replay_compat-db3f0ecd08a4ccf5)
+
+running 1 test
+test legacy_errors_follow_input_order_even_when_rows_are_preloaded_in_account_order ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/state_view.rs (target/debug/deps/state_view-e97cc8cbb6b1936c)
+
+running 6 tests
+test corrected_post_reads_only_referenced_rows_and_proposes_the_next_entry ... ok
+test first_decision_checks_normalized_command_identity_on_retry ... ok
+test partial_capture_loads_only_accounts_with_a_pending_change ... ok
+test storage_faults_cannot_be_mistaken_for_recordable_business_rejections ... ok
+test stored_rows_round_trip_and_invalid_values_or_collection_lengths_are_refused ... ok
+test v1_waterfall_rows_accept_twice_the_per_input_limit ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running unittests src/lib.rs (target/debug/deps/ledger_export-e12768d49dbdbe87)
+
+running 9 tests
+test tests::a_blocked_publisher_cannot_stop_archive_progress ... ok
+test tests::a_cursor_is_exclusive_bounded_and_fails_closed_after_damage ... ok
+test tests::archive_first_noops_and_ambiguous_delivery_resume_independently ... ok
+test tests::changed_remote_tip_cannot_inherit_the_old_witness_or_release_events ... ok
+test tests::enabling_an_archive_resumes_the_broker_after_its_previous_delivery ... ok
+test tests::existing_archive_must_match_source_before_its_progress_is_reported ... ok
+test tests::explicit_disabled_archive_allows_applied_events_without_claiming_durability ... ok
+test tests::malformed_feed_pages_cannot_advance_either_destination ... ok
+test tests::matching_archive_head_still_requires_exact_saved_local_boundary ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s
+
+     Running unittests src/lib.rs (target/debug/deps/ledger_export_adapters-3f2ca39f9170cde9)
+
+running 1 test
+test event::tests::waterfall_keeps_original_order_full_width_amounts_and_resolved_postings ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/kafka.rs (target/debug/deps/kafka-82a413ab78fd016d)
+
+running 4 tests
+test immutable_delivery_and_secret_free_destination_configuration ... ok
+test mock_cluster_orders_records_and_replays_stable_business_ids ... ok
+test real_broker_acknowledges_and_consumer_decodes_protobuf ... ignored, requires a fresh Kafka topic with at least two partitions
+test unreachable_broker_cannot_acknowledge_delivery ... ok
+
+test result: ok. 3 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 2.23s
+
+     Running tests/posix.rs (target/debug/deps/posix-4daa8344a4613b9d)
+
+running 2 tests
+test lazy_open_exact_overlap_and_fenced_generation ... ok
+test learner_retries_after_a_dangling_or_redirected_mount ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running unittests src/lib.rs (target/debug/deps/ledger_node-36cce1176d1bfa3a)
+
+running 17 tests
+test checkpoints::tests::late_worker_completion_preserves_a_newer_installed_snapshot_frontier ... ok
+test checkpoints::tests::stale_offer_reports_and_slow_but_advancing_appends_preserve_the_current_pin ... ok
+test checkpoints::tests::waiting_for_a_checkpoint_worker_leaves_the_voter_free_to_process_commits ... ok
+test client_service::tests::follower_hint_is_a_node_id_and_business_errors_stay_out_of_transport_status ... ok
+test client_service::tests::request_deadline_understands_grpc_units_and_caps_long_calls ... ok
+test host::admission::tests::expired_requests_never_enter_the_proposal_queue ... ok
+test host::admission::tests::in_flight_commands_keep_their_admission_budget ... ok
+test host::admission::tests::large_commands_exhaust_bytes_before_request_slots ... ok
+test monitor::tests::a_partial_event_entry_and_an_unverified_archive_remain_outstanding ... ok
+test runtime::tests::saturated_replication_still_retires_submissions ... ok
+test transport::snapshots::tests::authenticated_chunks_resume_after_disconnect_and_only_verified_images_reach_the_owner ... ok
+test transport::snapshots::tests::progressing_offers_can_outlive_a_day_and_idle_or_cancelled_offers_release_the_pin ... ok
+test transport::snapshots::tests::replay_rejects_invalid_proofs_and_uses_files_with_an_older_peer ... ok
+test transport::snapshots::tests::startup_cleanup_reports_a_missing_storage_path_without_stopping_the_voter ... ok
+test transport::tests::admits_only_the_message_bound_to_the_authenticated_sender_and_recipient ... ok
+test transport::tests::data_saturation_leaves_admission_capacity_for_a_vote_or_heartbeat ... ok
+test transport::tests::rejects_local_control_proposals_snapshots_and_oversized_messages ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.46s
+
+     Running unittests src/main.rs (target/debug/deps/ledger_node-8abd84e6032e3e14)
+
+running 8 tests
+test config::exports::tests::kafka_pem_paths_are_relative_to_the_config_file ... ok
+test tests::bootstrap_is_explicit_and_reopen_uses_the_config_directory ... ok
+test tests::learner_configuration_is_independent_of_a_broken_archive_mount ... ok
+test tests::only_init_or_run_with_one_path_is_valid ... ok
+test tests::public_listener_requires_recovery_and_loads_credentials_only_for_a_voter ... ok
+test tests::static_learner_topology_places_exports_only_on_the_nonvoter ... ok
+test tests::strict_fields_and_membership_are_checked_without_creating_state ... ok
+test tests::voter_can_reopen_with_a_different_cache_budget ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+
+     Running tests/network.rs (target/debug/deps/network-bead25a9bfb18851)
+
+running 28 tests
+test a_ca_valid_certificate_with_the_wrong_voter_pin_cannot_form_a_quorum ... ok
+test account_reads::batched_account_reads_match_one_protected_state_during_writes ... ok
+test api::capacity::sdk_capacity_and_storage ... ignored, release SDK traffic and disk-growth drill on local TCP
+test api::first_payment_example_runs_twice_with_the_same_receipt ... ok
+test api::generated_client_recovers_an_unknown_payment_through_new_leader_and_protected_reads ... ok
+test api::history::model_rejects_double_spends_and_completed_before_read_violations ... ok
+test api::history::two_wallet_history_survives_journal_outage_and_leader_replacement ... ok
+test api::load::public_protected_load_suite ... ignored, local public mTLS payment, quorum read and retry load suite
+test api::partial_capture_requires_disposition_and_void_releases_only_remaining_funds ... ok
+test api::public_listener_rejects_a_raft_peer_certificate_at_the_tls_handshake ... ok
+test cli::learner::learner_cli_archives_and_publishes_after_quorum_ack_and_restart ... cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Initialized voter 2.
+Initialized voter 3.
+Initialized learner 4.
+Learner 4 listening on 127.0.0.1:49886.
+Learner monitor listening on 127.0.0.1:49891.
+Learner exports ExportStatus { archive_cursor: None, archived_through: None, event_cursor: None, archive_error: None, event_error: None }
+Voter 2 listening on 127.0.0.1:49884.
+Voter 1 listening on 127.0.0.1:49883.
+Ledger API listening on 127.0.0.1:49888.
+Ledger API listening on 127.0.0.1:49887.
+Learner 4 listening on 127.0.0.1:49886.
+Learner monitor listening on 127.0.0.1:49891.
+Learner exports ExportStatus { archive_cursor: Some(0), archived_through: None, event_cursor: Some(Position { index: 0, slot: 65535 }), archive_error: Some("export temporarily unavailable: recovery journal I/O: No such file or directory (os error 2)"), event_error: None }
+Learner 4 listening on 127.0.0.1:49886.
+Learner monitor listening on 127.0.0.1:49891.
+Learner exports ExportStatus { archive_cursor: Some(5), archived_through: None, event_cursor: Some(Position { index: 5, slot: 65535 }), archive_error: None, event_error: None }
+Learner 4 listening on 127.0.0.1:49886.
+Learner monitor listening on 127.0.0.1:49891.
+Learner exports ExportStatus { archive_cursor: None, archived_through: None, event_cursor: Some(Position { index: 6, slot: 65535 }), archive_error: None, event_error: None }
+Restored voter 11 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Restored voter 12 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Restored voter 13 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Restored voter 14 through index 6.
+Recovery work base_index=0 replayed_entries=6
+Activation work base_index=0 compared_entries=6
+cluster=43 index=6 term=1 fenced=false sha256=2854db9bd7e265074824f3436ea8389b086ee137ae9e69723b8913f595e8681c
+Voter 12 listening on 127.0.0.1:49991.
+Ledger API listening on 127.Voter0 11 listening on .0.1:49995.
+127.0.0.1:49990.
+Ledger API listening on 127.0.0.1:49994.
+Voter 13 listening on 127.0.0.1:49992.
+Ledger API listening on 127.0.0.1:49996.
+Learner 14 listening on 127.0.0.1:49993.
+Learner exports ExportStatus { archive_cursor: Some(0), archived_through: None, event_cursor: None, archive_error: None, event_error: None }
+ok
+test cli::learner::learner_process_crash_restores_only_the_archived_receipts ... ignored, process-crash drill terminates the fixture's local voter and learner children
+test cli::monitor::voter_operator_can_read_status_but_neither_listener_grants_it_payments ... cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Voter 1 listening on 127.0.0.1:50020.
+Ledger API listening on 127.0.0.1:50023.
+Voter monitor listening on 127.0.0.1:50026.
+ok
+test cli::process_crash::protected_all_voter_processes_sigkill_reconcile_inflight ... ignored, release three-voter process crash and same-disk restart drill on loopback
+test cli::rolling::protected_rolling_upgrade_and_rollback ... ignored, requires a frozen old voter binary and local TCP
+test cli::separate_voter_processes_commit_again_after_restart ... Initialized voter 1.
+Initialized voter 2.
+Voter 2 listening on 127.0.0.1:50032.
+Voter 1 listening on 127.0.0.1:50031.
+Voter 1 listening on 127.0.0.1:50031.
+ok
+test cli::three_cli_voters_serve_protected_account_after_process_restart ... cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Initialized voter 2.
+Initialized voter 3.
+Voter 2 listening on 127.0.0.1:50048.
+Ledger API listening on 127.0.0.1:50051.
+Voter 1 listening on 127.0.0.1:50047.
+Ledger API listening on 127.0.0.1:50050.
+Voter 3 listening on 127.0.0.1:50049.
+Ledger API listening on 127.0.0.1:50052.
+Local checkpoint index=2 term=1.
+Local checkpoint index=2 term=1.
+Local checkpoint index=2 term=1.
+ledger-node: replica filesystem: No such file or directory (os error 2)
+Local checkpoint index=2 term=1.
+ledger-node: replica filesystem: No such file or directory (os error 2)
+Rebuilt voter 2 from its Raft log through index 2.
+Voter 2 listening on 127.0.0.1:50048.
+Ledger API listening on 127.0.0.1:50051.
+Voter 3 listening on 127.0.0.1:50049.
+Ledger API listening on 127.0.0.1:50052.
+Local checkpoint index=4 term=2.
+ok
+test incomplete_peer_handshake_expires_without_stopping_the_listener ... ok
+test peer_quorum_batches_payments_and_replays_them_after_leader_loss ... ok
+test recovery::fencing_stops_protected_reads_retries_and_new_writes_on_the_old_quorum ... ok
+test recovery::isolated_follower_prepares_a_restart_anchor_without_publishing_its_local_tail ... ok
+test recovery::protected_failover_reads_need_a_live_quorum_even_with_a_healthy_journal ... ok
+test recovery::snapshots::a_different_learner_roster_cannot_supply_the_second_voter ... ok
+test recovery::snapshots::cold_nonvoting_learner_installs_an_authenticated_snapshot_then_reopens ... ok
+test recovery::snapshots::lagging_voter_installs_a_peer_checkpoint_and_preserves_protected_history ... ok
+test recovery::snapshots::snapshot_load::snapshot_catchup_under_payment_load ... ignored, multi-megabyte local mTLS snapshot and foreground latency measurement
+test recovery::total_voter_disk_loss_preserves_protected_partial_waterfall_and_retries ... ok
+test recovery::unavailable_journal_withholds_outcomes_after_local_application_advances ... ok
+
+test result: ok. 22 passed; 0 failed; 6 ignored; 0 measured; 0 filtered out; finished in 49.83s
+
+     Running tests/recovery_admin.rs (target/debug/deps/recovery_admin-13f9f28c91d7b96c)
+
+running 10 tests
+test administration_refuses_wrong_generations_and_activates_only_the_exact_imported_log ... ok
+test damaged_or_divergent_recovery_base_keeps_the_fence_and_destination_intact ... ok
+test explicitly_restoring_from_journal_survives_image_damage_but_requires_every_command ... ok
+test full_checkpoint_repair_replaces_a_damaged_image_from_the_complete_journal ... ok
+test journal_init_rejects_a_redirect_into_replica_storage_before_writing ... ok
+test journal_scrub_reports_the_verified_active_or_fenced_cut_and_detects_interior_damage ... ok
+test legacy_journal_alias_under_the_data_dir_can_point_to_a_separate_tree ... ok
+test recovery_checkpoint_builds_live_from_the_journal_and_advances_by_the_tail ... ok
+test recovery_validates_storage_layout_while_voter_initialization_and_run_require_credentials ... ok
+test stopped_voter_reclaims_only_a_sealed_independently_recoverable_prefix ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.03s
+
+     Running unittests src/lib.rs (target/debug/deps/ledger_recovery-b27003464fa6fb2b)
+
+running 22 tests
+test journal::base_tests::a_checksum_valid_base_from_an_unpublished_fork_cannot_restore_or_activate ... ok
+test journal::base_tests::concurrent_base_publication_chooses_one_manifest_and_rejects_damage ... ok
+test journal::base_tests::exact_base_cas_and_interruptions_preserve_published_authority ... ok
+test journal::base_tests::incremental_ancestry_remembers_generations_that_never_appended ... ok
+test journal::base_tests::publish_allows_concurrent_payments_and_fast_restore_authenticates_only_tail ... ok
+test journal::base_tests::repair_of_a_damaged_pointer_needs_the_complete_history_and_the_same_pointer_at_publication ... ok
+test journal::encoded_tests::encoded_entries_survive_overlap_and_partial_segment_seek_without_reencoding ... ok
+test tests::activation_requires_the_entire_fenced_history_to_be_intact ... ok
+test tests::contested_lock_times_out_without_publishing_or_reporting_a_cas_conflict ... ok
+test tests::count_entry_and_segment_limits_preserve_the_last_head ... ok
+test tests::damaged_middle_segment_is_detected_before_replay_begins ... ok
+test tests::failed_verification_or_a_concurrent_activation_cannot_publish_a_replacement ... ok
+test tests::fence_serializes_with_publish_and_activation_retains_exact_history ... ok
+test tests::invisible_staging_and_declined_writes_leave_previous_head_usable ... ok
+test tests::one_publication_wins_and_ambiguous_retry_confirms_the_durable_head ... ok
+test tests::replacement_evidence_is_bound_to_the_journal_checked_by_the_caller ... ok
+test tests::replacement_ids_are_opaque_and_can_never_repeat_an_old_generation ... ok
+test tests::replacement_replay_checks_historical_ids_before_import_and_delivers_entries_in_order ... ok
+test tests::retry_recovers_from_interruption_on_either_side_of_head_rename ... ok
+test tests::reverse_verification_rejects_foreign_anchors_and_missing_history ... ok
+test tests::reverse_verification_visits_authenticated_groups_once_and_propagates_errors ... ok
+test tests::two_fresh_replacements_cannot_activate_from_the_same_fence ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.16s
+
+     Running unittests src/lib.rs (target/debug/deps/ledger_replica-f44b3fc842f693ff)
+
+running 102 tests
+test account_cache::tests::a_pinned_old_read_cannot_observe_or_replace_a_published_new_version ... ok
+test account_cache::tests::collision_checks_the_entire_key_and_missing_or_failed_reads_do_not_evict ... ok
+test account_cache::tests::filling_a_miss_after_publication_does_not_reintroduce_an_old_row ... ok
+test account_cache::tests::full_slot_allocation_fits_the_budget_and_clear_reuses_it ... ok
+test batch::tests::assembling_prepared_commands_matches_the_existing_v1_encoding ... ok
+test batch::tests::count_and_byte_overflow_leave_the_command_for_the_next_batch ... ok
+test batch::tests::rejects_mixed_ledgers_and_empty_proposals_without_mutating_the_batch ... ok
+test batch::tests::voter_checks_leadership_and_ledger_before_appending ... ok
+test checkpoint::tests::restart_uses_published_cut_and_collects_a_sealed_unpublished_successor ... ok
+test checkpoint_files::replay_tests::a_bad_replay_base_falls_back_and_a_partial_physical_transfer_stays_physical ... ok
+test checkpoint_files::replay_tests::replay_authenticates_local_and_incoming_history_while_live_state_stays_private ... ok
+test checkpoint_files::tests::collection_skips_the_active_and_pinned_generations_and_resumes_partial_retirement ... ok
+test checkpoint_files::tests::full_scrub_hashes_immutable_bytes_even_when_local_file_identity_is_unchanged ... ok
+test checkpoint_files::tests::rejects_damaged_files_wrong_boundary_symlinks_and_unknown_contents ... ok
+test checkpoint_files::tests::rejects_duplicate_path_traversal_and_missing_manifest_dependencies ... ok
+test checkpoint_files::tests::reuses_only_the_same_immutable_inode_and_keeps_working_metadata_private ... ok
+test checkpoint_files::tests::startup_only_removes_marked_abandoned_captures_with_known_flat_files ... ok
+test checkpoint_files::tests::transfer_tests::expiration_keeps_active_recent_and_unknown_workspaces_and_reclaims_idle_data ... ok
+test checkpoint_files::tests::transfer_tests::moves_a_real_projection_between_voters_and_retains_both_pins_during_gc ... ok
+test checkpoint_files::tests::transfer_tests::resumes_inside_a_file_rejects_bad_data_and_skips_identical_local_tables ... ok
+test checkpoint_files::tests::transfer_tests::superseded_offer_reuses_only_identical_staged_files_and_partial_ranges ... ok
+test checkpoint_files::tests::transfer_tests::validates_wire_bounds_before_staging_and_preserves_unowned_inbox_contents ... ok
+test checkpoint_files::transfer::replay::tests::prefer_physical_on_at_least_half_file_bytes_or_without_a_bounded_earlier_cut ... ok
+test codec::tests::bounds_encoded_bytes_and_all_collections ... ok
+test codec::tests::preserves_complete_ordered_payloads_and_replay ... ok
+test codec::tests::rejects_noncanonical_negative_zero_and_invalid_option_tags ... ok
+test codec::tests::void_matches_the_v1_golden_bytes ... ok
+test journal_verifier::tests::competing_verifiers_retry_from_the_winning_durable_head ... ok
+test journal_verifier::tests::counts_local_journal_publications_separately_from_observation_and_failed_rounds ... ok
+test journal_verifier::tests::follower_can_save_the_compared_cut_while_a_leader_extends_the_journal ... ok
+test journal_verifier::tests::follower_startup_can_inspect_a_published_generation_while_a_writer_holds_the_lock ... ok
+test journal_verifier::tests::grouped_publications_advance_the_durable_anchor_at_the_entry_interval ... ok
+test journal_verifier::tests::observer_never_publishes_and_previously_saved_digest_rejects_foreign_history ... ok
+test journal_verifier::tests::raft_sync_counters_distinguish_grouped_appends_hard_state_and_message_only_ready ... ok
+test journal_verifier::tests::restarted_verifier_compares_only_the_suffix_and_still_checks_serving_authority ... ok
+test projection::tests::a_metadata_hardlink_is_rejected_before_rocksdb_can_modify_the_seal ... ok
+test projection::tests::capture_and_install_share_ssts_with_private_writable_metadata ... ok
+test projection::tests::capture_requires_a_committed_cut_and_never_cleans_an_existing_staging_name ... ok
+test projection::tests::damaged_clone_frontier_or_missing_family_never_replaces_prior_data ... ok
+test projection::tests::dangling_or_mismatched_indexes_are_storage_errors ... ok
+test projection::tests::export_resumes_inside_a_microbatch_and_skips_retries_and_empty_entries ... ok
+test projection::tests::failed_publication_preserves_cache_history_and_index ... ok
+test projection::tests::foreign_ledger_hold_is_a_storage_error_before_advancing_or_recording_a_rejection ... ok
+test projection::tests::incomplete_install_can_retry_and_wrong_frontier_or_ledger_fails_closed ... ok
+test projection::tests::materializes_first_decisions_and_all_accounts_released_by_partial_capture ... ok
+test projection::tests::refuses_unknown_contents_and_symlink_targets ... ok
+test projection::tests::refuses_unrecognized_working_files_before_cleanup_or_materialization ... ok
+test projection::tests::reopening_after_db_write_before_cache_publication_replays_raft_and_starts_cold ... ok
+test projection::tests::same_batch_corrections_and_retries_use_the_first_immutable_decision ... ok
+test raft_store::journal_anchor::tests::an_optional_anchor_survives_restart_and_only_advances_through_committed_live_heads ... ok
+test raft_store::journal_anchor::tests::concurrent_verifiers_cannot_replace_an_unobserved_durable_anchor ... ok
+test raft_store::journal_anchor::tests::tampered_anchor_wrong_voter_and_changed_local_boundary_cannot_be_reused ... ok
+test raft_store::reclaim::tests::crashes_on_both_sides_of_the_pointer_switch_leave_local_restart_independent ... ok
+test raft_store::reclaim::tests::partial_adopted_ranges_are_physically_pruned_and_their_matching_entry_remains_local ... ok
+test raft_store::reclaim::tests::physical_bytes_shrink_and_a_replacement_base_preserves_exact_reads_repair_and_votes ... ok
+test raft_store::reclaim::tests::raw_mismatch_preserves_local_rows_and_prior_floor ... ok
+test raft_store::reclaim::tests::reclaim_advances_an_authenticated_older_anchor_and_protected_restart_only_reads_tail ... ok
+test raft_store::reclaim::tests::reclaim_retains_a_newer_anchor_and_refuses_a_saved_fork ... ok
+test raft_store::snapshot::tests::a_commit_advance_after_successful_replay_checks_interior_rows_before_ready_adopts ... ok
+test raft_store::snapshot::tests::corrupt_logical_replication_floor_is_repairable_without_losing_log_rows ... ok
+test raft_store::snapshot::tests::encoded_history_transfer_completes_replay_and_reexports_original_wire_bytes ... ok
+test raft_store::snapshot::tests::expiry_discards_only_the_unpinned_matching_stage_and_preserves_adopted_history ... ok
+test raft_store::snapshot::tests::interrupted_transfer_is_invisible_then_ready_atomically_adopts_only_missing_bytes ... ok
+test raft_store::snapshot::tests::native_snapshot_retains_nonvoting_membership_after_reopen_and_rejects_role_changes ... ok
+test raft_store::snapshot::tests::proof_hashes_original_protobuf_order_and_rejects_conflicting_committed_overlap ... ok
+test raft_store::snapshot::tests::replay_budgets_cover_the_base_and_gaps_in_durable_stage_are_detected ... ok
+test raft_store::snapshot::tests::replay_mismatch_invalidates_only_the_unadopted_exact_stage ... ok
+test raft_store::snapshot::tests::replay_proof_covers_local_gap_resumed_history_and_source_identity ... ok
+test raft_store::snapshot::tests::successive_remote_seals_retain_earlier_ranges_for_export_and_genesis_audit ... ok
+test raft_store::tests::a_decodable_pointer_still_requires_a_positive_committed_index_and_matching_term ... ok
+test raft_store::tests::checkpoint_restart_checks_its_boundary_and_the_entire_suffix_even_past_commit ... ok
+test raft_store::tests::checkpoint_skips_old_bytes_on_restart_but_old_log_reads_and_full_rebuild_check_them ... ok
+test raft_store::tests::fixed_membership_identity_and_empty_log_survive_restart ... ok
+test raft_store::tests::malformed_pointer_can_be_ignored_for_explicit_full_verification_then_cleared ... ok
+test raft_store::tests::only_monotonic_committed_checkpoints_can_be_published ... ok
+test raft_store::tests::overwritten_suffix_and_light_ready_commit_survive_restart ... ok
+test raft_store::tests::persistence_reports_only_completed_wal_batches ... ok
+test raft_store::tests::refuses_gaps_committed_rewrites_and_double_votes_without_partial_writes ... ok
+test raft_store::tests::refuses_recovery_from_a_log_with_a_missing_record ... ok
+test raft_store::tests::storage_serves_only_a_published_checkpoint_covering_the_requested_index ... ok
+test recovery::base::registry::tests::offline_voter_pins_keep_their_exact_image_across_new_publications ... ok
+test recovery::base::scratch::tests::interrupted_builder_is_reclaimed_only_if_all_surviving_files_are_recognized ... ok
+test recovery::base_image::tests::checks_manifest_bounds_and_paths_before_using_names ... ok
+test recovery::base_image::tests::exports_a_real_rocksdb_pair_and_gives_each_voter_private_writable_files ... ok
+test recovery::base_image::tests::honors_multiple_reader_pins_and_resumes_detached_partial_retirement ... ok
+test recovery::base_image::tests::verifies_each_consumer_copy_and_refuses_unknown_content_or_mutable_aliasing ... ok
+test recovery::exact_export_tests::noncanonical_wire_bytes_round_trip_through_genesis_and_checkpoint_restore ... ok
+test recovery::tests::concurrent_restores_publish_at_most_one_new_voter_identity ... ok
+test recovery::tests::corrupt_replacement_checkpoint_fails_closed_and_its_full_log_can_rebuild ... ok
+test recovery::tests::export_is_bounded_by_committed_prefix_size_and_count ... ok
+test recovery::tests::interrupted_after_sealing_before_directory_publication_can_retry ... ok
+test recovery::tests::interrupted_restore_preserves_unrecognized_files_and_cleans_private_partial_data_on_retry ... ok
+test recovery::tests::invalid_committed_payload_never_publishes_a_partial_voter ... ok
+test recovery::tests::only_publishes_a_verified_fenced_cut_into_fresh_voter_storage ... ok
+test recovery::tests::restore_and_first_protected_read_use_the_independent_base_and_exact_tail ... ok
+test recovery::tests::restored_learner_uses_the_neutral_image_and_retains_its_native_role ... ok
+test replica::snapshot::tests::restart_selects_the_old_or_new_payment_view_at_the_durable_snapshot_ready_boundary ... ok
+test replica::tests::invalid_voter_sets_do_not_initialize_a_directory ... ok
+test replica::tests::missing_raft_store_does_not_bootstrap_over_a_surviving_ledger ... ok
+test replica::tests::reopen_rebuilds_a_v1_single_family_projection_from_the_durable_log ... ok
+test replica::tests::restart_binds_identity_but_accepts_voter_list_reordering ... ok
+test replica::tests::unsupported_committed_format_stops_local_reads_and_replay ... ok
+
+test result: ok. 102 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.92s
+
+     Running tests/cache.rs (target/debug/deps/cache-6f7c7fdc668c732e)
+
+running 1 test
+test published_rows_match_the_ordered_ledger_when_disabled_warm_evicted_and_reopened ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/checkpoint.rs (target/debug/deps/checkpoint-87440c93e3e7f788)
+
+running 2 tests
+test a_delayed_checkpoint_worker_seals_the_applied_cut_it_actually_captured ... ok
+test recovered_checkpoint_and_committed_tail_match_full_replay ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.36s
+
+     Running tests/replication.rs (target/debug/deps/replication-6e3d0b10ce85e849)
+
+running 5 tests
+test an_isolated_voters_persisted_append_is_excluded_from_replay ... ok
+test lagging_voter_receives_a_large_backlog_in_wire_sized_appends ... ok
+test quorum_failover_and_disk_replay_preserve_exact_payment_and_rejection ... ok
+test read_barrier_returns_its_context_after_a_quorum_response ... ok
+test static_learner_follows_a_new_leader_but_cannot_supply_a_quorum_after_restart ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.77s
+
+     Running tests/upgrade_history.rs (target/debug/deps/upgrade_history-3286f2da9ce44eec)
+
+running 1 test
+test previous_build_preserves_postings_waterfall_hold_and_rejection ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+   Doc-tests ledger_api
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests ledger_core
+
+running 1 test
+test crates/ledger-core/src/account.rs - account::Account (line 158) - compile fail ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+   Doc-tests ledger_export
+
+running 1 test
+test crates/ledger-export/src/lib.rs - (line 9) - compile ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+all doctests ran in 1.05s; merged doctests compilation took 0.53s
+   Doc-tests ledger_export_adapters
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests ledger_node
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests ledger_recovery
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests ledger_replica
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

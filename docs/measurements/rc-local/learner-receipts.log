@@ -1,0 +1,31 @@
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.75s
+     Running tests/network.rs (target/debug/deps/network-86f39575f3b8da1a)
+
+running 1 test
+cluster=42 index=0 term=0 fenced=false sha256=81c313030ccc5caf9242860e23ab0eb62e562be775136de73e4a50d0c7093a41
+Initialized voter 1.
+Initialized voter 2.
+Initialized voter 3.
+Initialized learner 4.
+Learner 4 listening on 127.0.0.1:56891.
+Learner monitor listening on 127.0.0.1:56896.
+Learner exports ExportStatus { archive_cursor: None, archived_through: None, event_cursor: None, archive_error: None, event_error: None }
+Voter 1 listening on 127.0.0.1:Voter 2 listening on 56888127.0.0.1:56889.
+.
+Ledger API listening on 127.0.0.1:56893.
+Ledger API listening on 127.0.0.1:56892.
+Learner 4 listening on 127.0.0.1:56891.
+Learner monitor listening on 127.0.0.1:56896.
+Learner exports ExportStatus { archive_cursor: Some(0), archived_through: None, event_cursor: Some(Position { index: 0, slot: 65535 }), archive_error: Some("export temporarily unavailable: recovery journal I/O: No such file or directory (os error 2)"), event_error: None }
+Learner 4 listening on 127.0.0.1:56891.
+Learner monitor listening on 127.0.0.1:56896.
+Learner exports ExportStatus { archive_cursor: Some(5), archived_through: None, event_cursor: Some(Position { index: 5, slot: 65535 }), archive_error: None, event_error: None }
+Learner 4 listening on 127.0.0.1:56891.
+Learner monitor listening on 127.0.0.1:56896.
+Learner exports ExportStatus { archive_cursor: None, archived_through: None, event_cursor: Some(Position { index: 6, slot: 65535 }), archive_error: None, event_error: None }
+learner_restore cut_index=6 independent_receipts=6 matched=4 lost_accepted=1 lost_rejected=1 kafka_only_beyond_cut=2
+test cli::learner::learner_cli_archives_and_publishes_after_quorum_ack_and_restart ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 21 filtered out; finished in 7.49s
+

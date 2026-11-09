@@ -1,0 +1,17 @@
+    Blocking waiting for file lock on build directory
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+   Compiling ledger-export-adapters v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-export-adapters)
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 26.72s
+     Running tests/network.rs (target/debug/deps/network-447c1a06d788c70d)
+
+running 6 tests
+test api::capacity::sdk_capacity_and_storage ... ignored, release SDK traffic and disk-growth drill on local TCP
+test api::first_payment_example_runs_twice_with_the_same_receipt ... ok
+test api::generated_client_recovers_an_unknown_payment_through_new_leader_and_protected_reads ... ok
+test api::load::public_protected_load_suite ... ignored, local public mTLS payment, quorum read and retry load suite
+test api::partial_capture_requires_disposition_and_void_releases_only_remaining_funds ... ok
+test api::public_listener_rejects_a_raft_peer_certificate_at_the_tls_handshake ... ok
+
+test result: ok. 4 passed; 0 failed; 2 ignored; 0 measured; 16 filtered out; finished in 11.40s
+

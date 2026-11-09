@@ -1,0 +1,47 @@
+Bootstrap metadata: BootstrapMetadata(records=[ApiMessageAndVersion(FeatureLevelRecord(name='metadata.version', featureLevel=33) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='eligible.leader.replicas.version', featureLevel=1) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='group.version', featureLevel=1) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='share.version', featureLevel=2) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='streams.version', featureLevel=1) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='transaction.version', featureLevel=2) at version 0)], metadataVersionLevel=33, source=format command)
+Formatting dynamic metadata voter directory /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-kafka-drill-s8wcynkd/data-1 with metadata.version 4.4-IV2.
+Bootstrap metadata: BootstrapMetadata(records=[ApiMessageAndVersion(FeatureLevelRecord(name='metadata.version', featureLevel=33) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='eligible.leader.replicas.version', featureLevel=1) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='group.version', featureLevel=1) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='share.version', featureLevel=2) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='streams.version', featureLevel=1) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='transaction.version', featureLevel=2) at version 0)], metadataVersionLevel=33, source=format command)
+Formatting dynamic metadata voter directory /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-kafka-drill-s8wcynkd/data-2 with metadata.version 4.4-IV2.
+Bootstrap metadata: BootstrapMetadata(records=[ApiMessageAndVersion(FeatureLevelRecord(name='metadata.version', featureLevel=33) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='eligible.leader.replicas.version', featureLevel=1) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='group.version', featureLevel=1) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='share.version', featureLevel=2) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='streams.version', featureLevel=1) at version 0), ApiMessageAndVersion(FeatureLevelRecord(name='transaction.version', featureLevel=2) at version 0)], metadataVersionLevel=33, source=format command)
+Formatting dynamic metadata voter directory /var/folders/tf/99m9r7jd61n36752cs6j3p200000gn/T/ledger-kafka-drill-s8wcynkd/data-3 with metadata.version 4.4-IV2.
+Created topic ledger-decisions-drill.
+Topic: ledger-decisions-drill	Partition: 1	Leader: 1	Replicas: 1,2,3	Isr: 1,2,3	Elr: 	LastKnownElr:
+    Blocking waiting for file lock on build directory
+   Compiling ring v0.17.14
+   Compiling libz-sys v1.1.32
+   Compiling openssl-sys v0.9.118
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+   Compiling ledger-export-adapters v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-export-adapters)
+   Compiling ledger-recovery v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-recovery)
+   Compiling rustls v0.23.46
+   Compiling rustls-webpki v0.103.16
+   Compiling tokio-rustls v0.26.6
+   Compiling tonic v0.14.9
+   Compiling tonic-prost v0.14.9
+   Compiling rdkafka-sys v4.10.0+2.12.1
+   Compiling rdkafka v0.39.0
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 53.84s
+     Running tests/kafka.rs (target/debug/deps/kafka-c2052111de115108)
+
+running 1 test
+Topic: ledger-decisions-drill	Partition: 1	Leader: 2	Replicas: 1,2,3	Isr: 2,3	Elr: 	LastKnownElr:
+
+thread 'real_broker_acknowledges_and_consumer_decodes_protobuf' (628844) panicked at crates/ledger-export-adapters/tests/kafka.rs:72:27:
+called `Result::unwrap()` on an `Err` value: KafkaError (Message consumption error: BrokerTransportFailure (Local: Broker transport failure))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test real_broker_acknowledges_and_consumer_decodes_protobuf ... FAILED
+
+failures:
+
+failures:
+    real_broker_acknowledges_and_consumer_decodes_protobuf
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 3 filtered out; finished in 14.30s
+
+error: test failed, to rerun pass `-p ledger-export-adapters --test kafka`
+Traceback (most recent call last):
+  File "/Users/karimelnaggar/rust-raft-ledger/scripts/kafka-failover.py", line 126, in <module>
+    drill(Path(sys.argv[1]).resolve() / "bin", Path(temp), stack)
+  File "/Users/karimelnaggar/rust-raft-ledger/scripts/kafka-failover.py", line 120, in drill
+    raise RuntimeError("adapter delivery or verification failed")
+RuntimeError: adapter delivery or verification failed

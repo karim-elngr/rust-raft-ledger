@@ -1,0 +1,7 @@
+
+running 1 test
+protected_restore cut_index=10 independent_receipts=9 matched=9 lost=0 first_payment_ms=1731 three_voters_ms=1732 applied_through=16
+test recovery::total_voter_disk_loss_preserves_protected_partial_waterfall_and_retries ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 26 filtered out; finished in 3.35s
+

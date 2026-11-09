@@ -1,0 +1,32 @@
+UTC date 2026-11-09
+Host aarch64-apple-darwin, macOS 27.2 (26B123), Rust 1.99.1, protoc 3.21.12
+Release test binary SHA-256 548b14c5a76ed95873618cf18a83bbd633779b0a6d5d006ce1088e564e3c80bd
+$ cargo test --release --locked -p ledger-node --test network snapshot_catchup_under_payment_load -- --ignored --nocapture
+    Finished `release` profile [optimized] target(s) in 57.46s
+     Running tests/network.rs (target/release/deps/network-82bf147c3dcebacb)
+
+running 1 test
+phase,seal_index,target_index,manifest_bytes,file_bytes,reused_file_bytes,history_bytes,history_entries,clients,follower_reopen_ms,catchup_ms,foreground_calls,completed_in_window,catchup_p50_ms,catchup_p99_ms,baseline_p50_ms,baseline_p99_ms,baseline_ms,receiver_alloc_before,receiver_alloc_peak,legacy_same_offer_file_bytes,legacy_same_offer_payload_bytes,measured_payload_bytes,replay_proof_bytes,reverse_rpc_message_bytes,replay_base_index
+cold,190,191,923,2795259,0,997105,189,32,13.3,675.2,476,444,49.66,66.63,33.01,40.09,484.6,200704,4169728,2795259,3793287,3793287,0,3795284,
+shared,307,308,1353,1049234,2762405,307791,77,32,38.8,705.3,599,567,40.70,55.82,27.91,34.38,495.6,4415488,5824512,1049234,1358378,1358378,0,1359548,
+independent layout at cut 435: 4 receiver compactions, 15 sender SSTs, 46 receiver SSTs, 0 identical SST bytes
+independent,472,473,2213,0,0,248955,37,32,56.4,685.6,588,556,36.01,60.54,28.17,33.44,531.7,10895360,12132352,5348504,5599672,251265,97,251504,435
+test recovery::snapshots::snapshot_load::snapshot_catchup_under_payment_load ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 21 filtered out; finished in 10.72s
+
+$ cargo test --locked -p ledger-replica --test replication lagging_voter_receives_a_large_backlog -- --nocapture
+Before disabling the raft-rs 0.7 append merge (test output excerpt):
+thread 'lagging_voter_receives_a_large_backlog_in_wire_sized_appends' (559242) panicked at crates/ledger-replica/tests/replication.rs:146:17:
+append exceeds peer wire limit: 5421716
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.75s
+
+After the change:
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.55s
+     Running tests/replication.rs (target/debug/deps/replication-1445743109983bf8)
+
+running 1 test
+catch-up append messages=6 total_bytes=10843488 largest_bytes=1807248
+test lagging_voter_receives_a_large_backlog_in_wire_sized_appends ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.60s

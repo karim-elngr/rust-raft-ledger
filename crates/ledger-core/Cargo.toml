@@ -1,0 +1,17 @@
+[package]
+name = "ledger-core"
+version = "0.1.0"
+edition.workspace = true
+publish = false
+
+[features]
+projection-serde = ["dep:serde"]
+
+[dependencies]
+serde = { version = "1", features = ["derive", "rc"], optional = true }
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+bincode = "1.3"

@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package ledger.peer.v1;
+
+// Receipt confirms admission to the recipient's Raft inbox.
+service RaftPeer {
+  rpc Step(StepRequest) returns (StepReceipt);
+  // A successful offer means the recipient admitted the complete, verified
+  // image to its Raft owner. Bulk data travels through bounded reverse RPCs.
+  rpc OfferSnapshot(StepRequest) returns (StepReceipt);
+  rpc ReadSnapshot(SnapshotRead) returns (SnapshotChunk);
+  rpc ReadSnapshotHistory(SnapshotHistoryRead) returns (SnapshotHistory);
+  // Optional capability. Earlier voters may return UNIMPLEMENTED.
+  rpc ReadSnapshotReplay(SnapshotReplayRead) returns (SnapshotReplayProof);
+}
+
+message StepRequest {
+  uint32 version = 1;
+  // All requests use the same routing identity. V1 carries the 16-byte
+  // big-endian cluster ID. V2 carries the 32-byte learner cohort digest.
+  bytes cluster = 2;
+  uint64 from = 3;
+  uint64 to = 4;
+  bytes raft = 5; // raft-rs eraftpb.Message.
+}
+
+message StepReceipt {}
+
+message SnapshotRead {
+  uint32 version = 1;
+  bytes cluster = 2;
+  uint64 from = 3;
+  uint64 to = 4;
+  bytes generation = 5; // Manifest digest of the active offer to this voter.
+  optional uint32 file = 6; // Absent selects the manifest itself.
+  uint64 offset = 7;
+  uint32 length = 8;
+}
+
+message SnapshotChunk {
+  bytes data = 1;
+  bool end = 2; // Last manifest slice. File requests return exactly length bytes.
+}
+
+message SnapshotHistoryRead {
+  uint32 version = 1;
+  bytes cluster = 2;
+  uint64 from = 3;
+  uint64 to = 4;
+  bytes generation = 5;
+  uint64 after = 6; // Exclusive lower bound on the missing committed prefix.
+}
+
+message SnapshotHistory {
+  repeated bytes entries = 1;
+}
+
+message SnapshotReplayRead {
+  uint32 version = 1;
+  bytes cluster = 2;
+  uint64 from = 3;
+  uint64 to = 4;
+  bytes generation = 5;
+  uint64 base_index = 6;
+  uint64 base_term = 7;
+}
+
+message SnapshotReplayProof {
+  // Empty if the source cannot serve a bounded replay of this interval.
+  bytes digest = 1;
+}

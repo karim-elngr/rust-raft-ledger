@@ -1,0 +1,10 @@
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.85s
+     Running unittests examples/reconcile_receipts.rs (target/debug/examples/reconcile_receipts-e499a336f0c5abcd)
+
+running 2 tests
+test receipts::tests::refuses_incomplete_unknown_and_ambiguous_protobuf_receipts ... ok
+test receipts::tests::verifies_balanced_lines_across_u128_carries ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

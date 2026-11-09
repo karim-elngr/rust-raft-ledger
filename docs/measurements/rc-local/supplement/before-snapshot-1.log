@@ -1,0 +1,11 @@
+
+running 1 test
+phase,seal_index,target_index,manifest_bytes,file_bytes,reused_file_bytes,history_bytes,history_entries,clients,follower_reopen_ms,catchup_ms,foreground_calls,completed_in_window,catchup_p50_ms,catchup_p99_ms,baseline_p50_ms,baseline_p99_ms,baseline_ms,receiver_alloc_before,receiver_alloc_peak,legacy_same_offer_file_bytes,legacy_same_offer_payload_bytes,measured_payload_bytes,replay_proof_bytes,reverse_rpc_message_bytes,replay_base_index
+cold,192,193,923,2795267,0,997167,191,32,16.8,594.3,512,480,35.96,59.05,27.04,33.28,444.3,200704,4173824,2795267,3793357,3793357,0,3795360,
+shared,320,321,1353,1073514,2762413,312612,92,32,39.5,637.9,498,466,43.07,55.47,29.93,34.10,472.6,4431872,5718016,1073514,1387479,1387479,0,1388694,
+independent layout at cut 440: 4 receiver compactions, 15 sender SSTs, 46 receiver SSTs, 0 identical SST bytes
+independent,493,494,2213,0,0,249451,53,32,64.3,797.1,617,585,38.14,79.67,33.29,112.44,813.3,10854400,12091392,5304863,5556527,251761,97,252048,440
+test recovery::snapshots::snapshot_load::snapshot_catchup_under_payment_load ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 21 filtered out; finished in 11.79s
+

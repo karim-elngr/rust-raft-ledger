@@ -1,0 +1,40 @@
+   Compiling ledger-api v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-api)
+   Compiling ledger-export-adapters v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-export-adapters)
+   Compiling ledger-node v0.1.0 (/Users/karimelnaggar/rust-raft-ledger/crates/ledger-node)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 16.02s
+     Running unittests src/lib.rs (target/debug/deps/ledger_node-a2119961e2be039a)
+
+running 17 tests
+test checkpoints::tests::late_worker_completion_preserves_a_newer_installed_snapshot_frontier ... ok
+test checkpoints::tests::stale_offer_reports_and_slow_but_advancing_appends_preserve_the_current_pin ... ok
+test checkpoints::tests::waiting_for_a_checkpoint_worker_leaves_the_voter_free_to_process_commits ... ok
+test client_service::tests::follower_hint_is_a_node_id_and_business_errors_stay_out_of_transport_status ... ok
+test client_service::tests::request_deadline_understands_grpc_units_and_caps_long_calls ... ok
+test host::admission::tests::expired_requests_never_enter_the_proposal_queue ... ok
+test host::admission::tests::in_flight_commands_keep_their_admission_budget ... ok
+test host::admission::tests::large_commands_exhaust_bytes_before_request_slots ... ok
+test monitor::tests::a_partial_event_entry_and_an_unverified_archive_remain_outstanding ... ok
+test runtime::tests::saturated_replication_still_retires_submissions ... ok
+test transport::snapshots::tests::authenticated_chunks_resume_after_disconnect_and_only_verified_images_reach_the_owner ... ok
+test transport::snapshots::tests::progressing_offers_can_outlive_a_day_and_idle_or_cancelled_offers_release_the_pin ... ok
+test transport::snapshots::tests::replay_rejects_invalid_proofs_and_uses_files_with_an_older_peer ... ok
+test transport::snapshots::tests::startup_cleanup_reports_a_missing_storage_path_without_stopping_the_voter ... ok
+test transport::tests::admits_only_the_message_bound_to_the_authenticated_sender_and_recipient ... ok
+test transport::tests::data_saturation_leaves_admission_capacity_for_a_vote_or_heartbeat ... ok
+test transport::tests::rejects_local_control_proposals_snapshots_and_oversized_messages ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.36s
+
+     Running unittests src/main.rs (target/debug/deps/ledger_node-bc775cfb8ee58ab0)
+
+running 7 tests
+test tests::bootstrap_is_explicit_and_reopen_uses_the_config_directory ... ok
+test tests::learner_configuration_is_independent_of_a_broken_archive_mount ... ok
+test tests::only_init_or_run_with_one_path_is_valid ... ok
+test tests::public_listener_requires_recovery_and_loads_credentials_only_for_a_voter ... ok
+test tests::static_learner_topology_places_exports_only_on_the_nonvoter ... ok
+test tests::strict_fields_and_membership_are_checked_without_creating_state ... ok
+test tests::voter_can_reopen_with_a_different_cache_budget ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.06s
+
